@@ -65,7 +65,7 @@ wget -O menu "${airassh2}/menu.sh"
 wget -O msettings "${airassh2}/msetting.sh"
 wget -O maddxray "${airassh2}/maddxray.sh"
 wget -O start-menu "${airassh2}/start-menu.sh"
-wget -O mbackup "${airassh2}/mbackup.sh"
+#wget -O mbackup "${airassh2}/mbackup.sh"
 # update menu backup
 # wget -O addemail "${airassh4}/addemail.sh"
 # wget -O autobackup "${airassh4}/autobackup.sh"
