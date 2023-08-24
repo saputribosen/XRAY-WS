@@ -34,7 +34,7 @@ cd
 wget https://raw.githubusercontent.com/saputribosen/XRAY-WS/main/updated/adddomain.sh && chmod +x adddomain.sh && ./adddomain.sh
 #
 # Link Hosting Untuk Backup
-wget https://raw.githubusercontent.com/saputribosen/scriptfree/main/backup/set-br.sh && chmod +x set-br.sh && ./set-br.sh
+#wget https://raw.githubusercontent.com/saputribosen/scriptfree/main/backup/set-br.sh && chmod +x set-br.sh && ./set-br.sh
 #
 #install tools/ alat
 wget https://raw.githubusercontent.com/saputribosen/XRAY-WS/main/install-tools.sh && chmod +x install-tools.sh && ./install-tools.sh
