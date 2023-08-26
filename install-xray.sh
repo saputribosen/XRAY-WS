@@ -45,6 +45,7 @@ sleep 3
 
 domain=$(cat /root/domain)
 sleep 1
+#buat folder xray running
 mkdir -p /etc/xray 
 echo -e "[ ${green}INFO${NC} ] Checking... "
 apt install iptables iptables-persistent -y
