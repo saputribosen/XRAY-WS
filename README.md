@@ -57,7 +57,7 @@ sudo su
 2. Update Dulu VPS NYA
 
 ```
-apt update && apt upgrade -y --fix-missing && update-grub && sleep 2 && reboot
+apt update -y && apt upgrade -y && apt dist-upgrade -y && reboot
 ```
 - Otomatis Akan Reboot / Hidupkan Ulang
 
