@@ -61,15 +61,15 @@ echo -e "$BLUE║---------------------------------------║"
 echo -e "$BLUE╠➣$NC Mod Menu by ARYO                     $BLUE║"
 echo -e "$BLUE╠➣$NC Telegram https://t.me/Opindoo        $BLUE║"
 echo -e "$BLUE╚═══════════════════════════════════════╝$NC"  
-read -p "Select From Options [ 0 ] : " menu
+read -p " ➣ Select From Options [ 0 - 16 ]:  " menu
 echo -e ""
 case $menu in
 0)
-clear
-exit
+maddxray
 ;;
 *)
 clear
-menu
+bash menu
 ;;
 esac
+#
