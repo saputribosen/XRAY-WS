@@ -105,10 +105,10 @@ addtrojangrpc
 addvmessgrpc
 ;;
 15)
-viewvmess
+viewtrojan
 ;;
 16)
-viewtrojan
+viewvmess
 ;;
 0)
 menu
