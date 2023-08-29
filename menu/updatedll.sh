@@ -79,12 +79,14 @@ wget -O start-menu "${airassh2}/start-menu.sh"
 # update xray menu
 wget -O addvmess "${airassh3}/addvmess.sh"
 wget -O addvmessgrpc "${airassh3}/addvmessgrpc.sh"
+wget -O viewvmess "${airassh3}/viewvmess.sh"
 wget -O dellvmess "${airassh3}/dellvmess.sh"
 wget -O rennewvmess "${airassh3}/rennewvmess.sh"
 wget -O addvless "${airassh3}/addvless.sh"
 wget -O dellvless "${airassh3}/dellvless.sh"
 wget -O rennewvless "${airassh3}/rennewvless.sh"
 wget -O addtrojan "${airassh3}/addtrojan.sh"
+wget -O viewtrojan "${airassh3}/viewtrojan.sh"
 wget -O addtrojangrpc "${airassh3}/addtrojanfrpc.sh"
 wget -O delltrojan "${airassh3}/delltrojan.sh"
 wget -O rennewtrojan "${airassh3}/rennewtrojan.sh"
@@ -116,6 +118,7 @@ chmod +x start-menu
 chmod +x menu
 # update xray menu
 chmod +x addvmess
+chmod +x viewvmess
 chmod +x addvmessgrpc
 chmod +x dellvmess
 chmod +x rennewvmess
@@ -123,6 +126,7 @@ chmod +x addvless
 chmod +x dellvless
 chmod +x rennewvless
 chmod +x addtrojan
+chmod +x viewtrojan
 chmod +x addtrojangrpc
 chmod +x delltrojan
 chmod +x rennewtrojan
