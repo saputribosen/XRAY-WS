@@ -59,7 +59,7 @@ echo -e "$BLUE  ║                                 $BLUE  ╠➣$NC 0. Back To 
 echo -e "$BLUE  ║-----------------------------------║-----------------------------------║"
 echo -e "$BLUE  ╚═══════════════════════════════════╩═══════════════════════════════════╝$NC"
 
-read -p " ➣ Select From Options [ 0 - 14 ]:  " menu
+read -p " ➣ Select From Options [ 0 - 16 ]:  " menu
 echo -e ""
 case $menu in
 1)
@@ -103,6 +103,12 @@ addtrojangrpc
 ;;
 14)
 addvmessgrpc
+;;
+15)
+viewvmess
+;;
+16)
+viewtrojan
 ;;
 0)
 menu
