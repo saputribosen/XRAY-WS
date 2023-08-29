@@ -54,4 +54,3 @@ cat /usr/bin/trojan/trojangrpc-$user.txt
 systemctl restart xray.service
 echo " "
 echo " "
-maddxray
