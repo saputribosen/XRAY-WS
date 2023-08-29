@@ -50,7 +50,6 @@ exp=$(grep -E "^#&# " "/etc/xray/config.json" | sort | uniq | cut -d ' ' -f 3 | 
 clear
 echo " "
 cat /usr/bin/trojan/trojan-$user.txt
-cat /usr/bin/trojan/trojangrpc-$user.txt
 systemctl restart xray.service
 echo " "
 echo -e ""
