@@ -53,15 +53,14 @@ cat /usr/bin/trojan/trojan-$user.txt
 cat /usr/bin/trojan/trojangrpc-$user.txt
 systemctl restart xray.service
 echo " "
-echo " "
 echo -e ""
 echo -e "$BLUE╔═══════════════════════════════════════$BLUE╗"
-echo -e "$BLUE╠➣$NC 0$NC. Exit                        $BLUE      ║ "
+echo -e "$BLUE╠➣$NC 0$NC. Back to Menu Xray           $BLUE      ║ "
 echo -e "$BLUE║---------------------------------------║"
 echo -e "$BLUE╠➣$NC Mod Menu by ARYO                     $BLUE║"
 echo -e "$BLUE╠➣$NC Telegram https://t.me/Opindoo        $BLUE║"
 echo -e "$BLUE╚═══════════════════════════════════════╝$NC"  
-read -p " ➣ Select From Options [ 0 - 16 ]:  " menu
+read -p " ➣ Select From Options [ 0 ]:  " menu
 echo -e ""
 case $menu in
 0)
