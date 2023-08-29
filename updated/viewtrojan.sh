@@ -47,9 +47,9 @@ NUMBER_OF_CLIENTS=$(grep -E "^#&# " "/etc/xray/config.json" | sort | uniq | cut 
 	done
 user=$(grep -E "^#&# " "/etc/xray/config.json" | sort | uniq | cut -d ' ' -f 2 | sed -n "${CLIENT_NUMBER}"p)
 exp=$(grep -E "^#&# " "/etc/xray/config.json" | sort | uniq | cut -d ' ' -f 3 | sed -n "${CLIENT_NUMBER}"p)
-systemctl restart xray.service
 clear
 echo " "
 cat /usr/bin/trojan/trojan-$user.txt
 echo " "
 echo " "
+systemctl restart xray.service
