@@ -51,6 +51,7 @@ clear
 echo " "
 cat /usr/bin/trojan/trojan-$user.txt
 cat /usr/bin/trojan/trojangrpc-$user.txt
-echo " "
-echo " "
 systemctl restart xray.service
+echo " "
+echo " "
+maddxray
