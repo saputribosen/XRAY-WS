@@ -55,4 +55,3 @@ systemctl restart xray.service
 echo " "
 echo " "
 maddxray
-echo " "
