@@ -54,4 +54,3 @@ cat /usr/bin/vmess/vmessgrpc-$user.txt
 systemctl restart xray.service
 echo " "
 echo " "
-maddxray
