@@ -50,7 +50,6 @@ exp=$(grep -E "^### " "/etc/xray/config.json" | sort | uniq | cut -d ' ' -f 3 | 
 clear
 echo " "
 cat /usr/bin/vmess/vmess-$user.txt
-cat /usr/bin/vmess/vmessgrpc-$user.txt
 systemctl restart xray.service
 echo " "
 echo -e ""
