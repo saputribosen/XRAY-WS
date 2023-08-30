@@ -13,7 +13,7 @@ LIGHT='\033[0;37m'
 # ==========================================
 # Getting
 MYIP=$(wget -qO- ipinfo.io/ip);
-MYAD=$(wget -qO- ipinfo.io/org);
+MYAD=$(wget -qO- ipinfo.io/org?token=7578ac19afd785);
 MYREG=$(wget -qO- ipinfo.io/region);
 echo "Checking VPS"
 IZIN=$(curl https://raw.githubusercontent.com/saputribosen/scriptfree/main/ipvps.txt | grep $MYIP | awk '{print $3}')
