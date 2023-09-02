@@ -89,6 +89,7 @@ apt install -y libnss3-dev libnspr4-dev pkg-config libpam0g-dev libcap-ng-dev li
 apt update -y
 apt upgrade -y
 apt dist-upgrade -y
+apt install sudo -y
 apt-get remove --purge ufw firewalld -y
 apt-get remove --purge exim4 -y
 
