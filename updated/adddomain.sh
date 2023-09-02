@@ -95,7 +95,7 @@ curl https://get.acme.sh | sh
 bash acme.sh --install
 cd .acme.sh
 bash acme.sh --set-default-ca --server letsencrypt
-bash acme.sh --register-account -m senowahyu62@gmail.com
+bash acme.sh --register-account -m aryobrokolly92@gmail.com
 bash acme.sh --issue -d $domain1 --standalone
 bash acme.sh --installcert -d $domain1 --fullchainpath /etc/xray/xray.crt --keypath /etc/xray/xray.key
 sleep 3
