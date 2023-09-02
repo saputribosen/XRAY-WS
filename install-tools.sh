@@ -92,12 +92,9 @@ apt dist-upgrade -y
 apt install sudo -y
 apt-get remove --purge ufw firewalld -y
 apt-get remove --purge exim4 -y
-
 # install wget and curl
 apt -y install wget curl
 apt -y install net-tools
-apt -y install socat
-
 # Install Requirements Tools
 apt install ruby -y
 apt install python -y
