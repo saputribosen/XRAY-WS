@@ -507,10 +507,10 @@ sed -i '$ i}' /etc/nginx/conf.d/xray.conf
 sleep 1
 #install bbr
 echo -e "[ ${green}INFO$NC ] Installing bbr.."
-wget -q -O /usr/bin/bbr "https://raw.githubusercontent.com/teddysun/across/master/bbr.sh"
-chmod +x /usr/bin/bbr
-bbr >/dev/null 2>&1
-rm /usr/bin/bbr >/dev/null 2>&1
+#wget -q -O /usr/bin/bbr "https://raw.githubusercontent.com/teddysun/across/master/bbr.sh"
+#chmod +x /usr/bin/bbr
+#bbr >/dev/null 2>&1
+#rm /usr/bin/bbr >/dev/null 2>&1
 #
 echo -e "$yell[SERVICE]$NC Restart All service"
 systemctl daemon-reload
