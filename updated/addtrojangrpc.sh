@@ -52,7 +52,7 @@ sed -i '/#trojangrpc$/a\#&# '"$user $exp"'\
 
 systemctl restart xray.service
 #buattrojangrpc
-trojanlinkgrpc="trojan://${uuid}@${domain}:443?mode=gun&security=tls&type=grpc&serviceName=trojan-grpc&sni=bug.com#${user}"
+trojanlinkgrpc="trojan://${uuid}@${domain}:443?mode=gun&security=tls&type=grpc&serviceName=aryo-grpc&sni=bug.com#${user}"
 service cron restart
 #tampil log.txt
 cd /usr/bin/trojan
@@ -66,7 +66,7 @@ echo -e "Host       : ${domain}" | tee -a trojangrpc-${user}.txt
 echo -e "Port       : ${tr}" | tee -a trojangrpc-${user}.txt
 echo -e "Password   : ${uuid}" | tee -a trojangrpc-${user}.txt
 echo -e "Network    : gRPC" | tee -a trojangrpc-${user}.txt
-echo -e "ServiceName: trojan-grpc" | tee -a trojangrpc-${user}.txt
+echo -e "ServiceName: aryo-grpc" | tee -a trojangrpc-${user}.txt
 echo -e "Created    : $hariini" | tee -a trojangrpc-${user}.txt
 echo -e "Expired    : $exp" | tee -a trojangrpc-${user}.txt
 echo -e "==========================" | tee -a trojangrpc-${user}.txt
