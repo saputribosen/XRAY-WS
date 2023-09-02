@@ -52,8 +52,8 @@ sed -i '/#vless$/a\#### '"$user $exp"'\
 },{"id": "'""$uuid""'","email": "'""$user""'"' /etc/xray/config.json
 sed -i '/#vlessgrpc$/a\#### '"$user $exp"'\
 },{"id": "'""$uuid""'","email": "'""$user""'"' /etc/xray/config.json
-xrayvless1="vless://${uuid}@${domain}:$tls?path=/xrayws&security=tls&encryption=none&type=ws#${user}"
-xrayvless2="vless://${uuid}@${domain}:$nontls?path=/xrayws&encryption=none&type=ws#${user}"
+xrayvless1="vless://${uuid}@${domain}:$tls?path=/vless&security=tls&encryption=none&type=ws#${user}"
+xrayvless2="vless://${uuid}@${domain}:$nontls?path=/vless&encryption=none&type=ws#${user}"
 xrayvless3="vless://${uuid}@${domain}:$tls?mode=gun&security=tls&encryption=none&type=grpc&serviceName=vless-grpc&sni=${domain}#${user}"
 systemctl restart xray.service
 service cron restart
@@ -70,7 +70,7 @@ echo -e "Port No TLS : $nontls" | tee -a vless-${user}.txt
 echo -e "User ID     : ${uuid}" | tee -a vless-${user}.txt
 echo -e "Encryption  : none" | tee -a vless-${user}.txt
 echo -e "Network     : ws" | tee -a vless-${user}.txt
-echo -e "Path        : /xrayws" | tee -a vless-${user}.txt
+echo -e "Path        : /vless" | tee -a vless-${user}.txt
 echo -e "Service-name: vless-grpc " | tee -a vless-${user}.txt
 echo -e "Created     : $hariini" | tee -a vless-${user}.txt
 echo -e "Expired     : $exp" | tee -a vless-${user}.txt
