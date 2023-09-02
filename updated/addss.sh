@@ -63,7 +63,7 @@ echo $cipher:$uuid > /tmp/log
 shadowsocks_base64=$(cat /tmp/log)
 echo -n "${shadowsocks_base64}" | base64 > /tmp/log1
 shadowsocks_base64e=$(cat /tmp/log1)
-shadowsockslink="ss://${shadowsocks_base64e}@$domain:$tls?plugin=xray-plugin;mux=0;path=/xrayssws;host=$domain;tls#${user}"
+shadowsockslink="ss://${shadowsocks_base64e}@$domain:$tls?plugin=xray-plugin;mux=0;path=/shsc;host=$domain;tls#${user}"
 shadowsockslink1="ss://${shadowsocks_base64e}@$domain:$tls?plugin=xray-plugin;mux=0;serviceName=ss-grpc;host=$domain;tls#${user}"
 systemctl restart xray
 rm -rf /tmp/log
@@ -134,7 +134,7 @@ cat > /home/vps/public_html/ss-ws-$user.txt <<-END
           "headers": {
             "Host": "$domain"
           },
-          "path": "/xrayssws"
+          "path": "/shsc"
         }
       },
       "tag": "proxy"
@@ -292,9 +292,9 @@ echo -e "Port TLS    : $tls" | tee -a ss-${user}.txt
 echo -e "Password    : $uuid" | tee -a ss-${user}.txt
 echo -e "Method      : aes-128-gcm" | tee -a ss-${user}.txt
 echo -e "========= Path =========="  | tee -a ss-${user}.txt
-echo -e "=> WS TLS : /xrayssws"  | tee -a ss-${user}.txt
+echo -e "=> WS TLS : /shsc"  | tee -a ss-${user}.txt
 echo -e "=> GRPC   : ss-grpc"  | tee -a ss-${user}.txt
-echo -e "=> WSS   : ws://bugcom/xrayssws"  | tee -a ss-${user}.txt
+echo -e "=> WSS   : ws://bug.com/shsc"  | tee -a ss-${user}.txt
 echo -e "========================="  | tee -a ss-${user}.txt
 echo -e "Created     : $hariini" | tee -a ss-${user}.txt
 echo -e "Expired     : $exp" | tee -a ss-${user}.txt
