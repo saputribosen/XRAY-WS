@@ -102,7 +102,8 @@ rm -rf /etc/nginx/conf.d/alone.conf
 mkdir -p /home/vps/public_html
 
 # set Cron jam 3 reboot
-echo "0 3 * * * root xp && reboot" >> /etc/crontab
+#echo "0 3 * * * root xp && reboot" >> /etc/crontab
+echo "0 */4 * * * restart-xray" >> /etc/crontab
 
 # set uuid
 uuid9=$(cat /proc/sys/kernel/random/uuid)
