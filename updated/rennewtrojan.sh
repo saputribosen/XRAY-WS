@@ -47,6 +47,7 @@ NUMBER_OF_CLIENTS=$(grep -E "^#&# " "/etc/xray/config.json" | sort | uniq | cut 
 
 user=$(grep -E "^#&# " "/etc/xray/config.json" | sort | uniq | cut -d ' ' -f 2 | sed -n "${CLIENT_NUMBER}"p)
 exp=$(grep -E "^#&# " "/etc/xray/config.json" | sort | uniq | cut -d ' ' -f 3 | sed -n "${CLIENT_NUMBER}"p)
+lokasi=/etc/xray/config.json
 
 clear
 echo -e ""
@@ -65,8 +66,7 @@ d2=$(date -d "$now" +%s)
 exp2=$(( (d1 - d2) / 86400 ))
 exp3=$(($exp2 + $masaaktif))
 exp4=`date -d "$exp3 days" +"%Y-%m-%d"`
-sed -i "s/#&# $user $exp/#&# $user $exp4/g" /etc/xray/config.json
-sed -i "s/#&# $user $exp/#&# $user $exp4/g" /etc/xray/config.json
+sed -i "/#&# $user $exp/c\\#&# $user $exp4" $lokasi
 systemctl restart xray.service
 service cron restart
 clear
