@@ -50,8 +50,6 @@ hariini=`date -d "0 days" +"%Y-%m-%d"`
 exp=`date -d "$masaaktif days" +"%Y-%m-%d"`
 sed -i '/#vmess$/a\### '"$user $exp"'\
 },{"id": "'""$uuid""'","alterId": '"0"',"email": "'""$user""'"' /etc/xray/config.json
-sed -i '/#vmessgrpc$/a\### '"$user $exp"'\
-},{"id": "'""$uuid""'","alterId": '"0"',"email": "'""$user""'"' /etc/xray/config.json
 cat>/etc/xray/vmess-$user-tls.json<<EOF
       {
       "v": "2",
@@ -82,29 +80,12 @@ cat>/etc/xray/vmess-$user-nontls.json<<EOF
       "tls": "none"
 }
 EOF
-cat>/etc/xray/vmess-$user-grpc.json<<EOF
-      {
-      "v": "2",
-      "ps": "${user}",
-      "add": "${domain}",
-      "port": "${tls}",
-      "id": "${uuid}",
-      "aid": "0",
-      "net": "grpc",
-      "path": "vmess-grpc",
-      "type": "gun",
-      "host": "",
-      "tls": "tls"
-}
-EOF
 
 ## ubah config ke base64
 vmess_base641=$( base64 -w 0 <<< $vmess_json1 )
 vmess_base642=$( base64 -w 0 <<< $vmess_json2 )
-vmess_base643=$( base64 -w 0 <<< $vmess_json3 )
 xrayv2ray1="vmess://$(base64 -w 0 /etc/xray/vmess-$user-tls.json)"
 xrayv2ray2="vmess://$(base64 -w 0 /etc/xray/vmess-$user-nontls.json)"
-xrayv2ray3="vmess://$(base64 -w 0 /etc/xray/vmess-$user-grpc.json)"
 systemctl restart xray.service
 systemctl restart xray
 service cron restart
@@ -130,21 +111,3 @@ echo -e "Link TLS    : ${xrayv2ray1}" | tee -a vmess-${user}.txt
 echo -e "=========================" | tee -a vmess-${user}.txt
 echo -e "Terimakasih ${user}" | tee -a vmess-${user}.txt
 echo -e "" | tee -a vmess-${user}.txt
-echo -e "" | tee -a vmess-${user}.txt
-echo -e "======-VMESS-GRPC-======" | tee -a vmess-${user}.txt
-echo -e "ISP         : ${MYAD}" | tee -a vmess-${user}.txt
-echo -e "Region      : ${MYREG}" | tee -a vmess-${user}.txt
-echo -e "Remarks     : ${user}" | tee -a vmess-${user}.txt
-echo -e "Host        : ${domain}" | tee -a vmess-${user}.txt
-echo -e "Port        : ${tls}" | tee -a vmess-${user}.txt
-echo -e "UserID/UUID : ${uuid}" | tee -a vmess-${user}.txt
-echo -e "Alter ID    : 0" | tee -a vmess-${user}.txt
-echo -e "Security    : auto" | tee -a vmess-${user}.txt
-echo -e "Network     : grPC" | tee -a vmess-${user}.txt
-echo -e "Servicename: vmess-grpc" | tee -a vmess-${user}.txt
-echo -e "Created     : $hariini" | tee -a vmess-${user}.txt
-echo -e "Expired     : $exp" | tee -a vmess-${user}.txt
-echo -e "=========================" | tee -a vmess-${user}.txt
-echo -e "Link GRPC   : ${xrayv2ray3}" | tee -a vmess-${user}.txt
-echo -e "=========================" | tee -a vmess-${user}.txt
-echo -e "Terimakasih ${user}" | tee -a vmess-${user}.txt
