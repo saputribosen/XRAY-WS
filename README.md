@@ -19,7 +19,7 @@
 - Menambahkan Tambah Domain Sebelum Install
 - Pemisahan pembuatan dan penghapusan masing-masing akun service
 - penambahan masa aktif/rennew akun
-- fixed auto reboot 05:00 GTM +7 
+- penambahan cek akun
 - Add auto Expired
 - dll
 
