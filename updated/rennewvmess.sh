@@ -49,7 +49,7 @@ NUMBER_OF_CLIENTS=$(grep -E "^### " "/etc/xray/config.json" | sort | uniq | cut 
 user=$(grep -E "^### " "/etc/xray/config.json" | sort | uniq | cut -d ' ' -f 2 | sed -n "${CLIENT_NUMBER}"p)
 exp=$(grep -E "^### " "/etc/xray/config.json" | sort | uniq | cut -d ' ' -f 3 | sed -n "${CLIENT_NUMBER}"p)
 lokasi=/etc/xray/config.json
-lok=/usr/bin/trojan/trojan-$user.txt
+lok=/usr/bin/vmess/vmess-$user.txt
 
 clear
 echo -e ""
