@@ -1,31 +1,20 @@
 <p align="center">
 
-# SCRIPT MULTI PORT 443/80
-- ***Script XRAY Multi Port 443/80 MOD By ARYO***
-- ***SCRIPT UNTUK MEMBUAT SERVER VPN***
+# SCRIPT XRAY-SIMPLY MULTI PORT 443/80 
+- ***Script XRAY Multi Port 443/80 By ARYO***
+- ***SCRIPT UNTUK MEMBUAT SERVER VPN PREMIUM***
 #
 
 # FITUR XRAY TLS
 - TROJAN WS        : **443**
 - TROJAN GRPC      : **443**
-- SHADOWSOCKS WS   : **443**
-- SHADOWSOCKS GRPC : **443**
 - VMESS WS         : **443**
 - VMESS GRPC       : **443**
-- VLESS WS         : **443**
-- VLESS GRPC       : **443**
 
 # FITUR XRAY HTTP
-- TROJAN WS        : **80**
-- TROJAN GRPC      : **80**
-- SHADOWSOCKS WS   : **80**
-- SHADOWSOCKS GRPC : **80**
 - VMESS WS         : **80**
-- VMESS GRPC       : **80**
-- VLESS WS         : **80**
-- VLESS GRPC       : **80**
 
-# MOD List & Updated
+# MOD List & Updated!
 - Pengoptimalan Menu
 - Menambahkan Tambah Domain Sebelum Install
 - Pemisahan pembuatan dan penghapusan masing-masing akun service
@@ -34,9 +23,9 @@
 - Add auto Expired
 - dll
 
-# OS 
+# OS Linux
 - Debian 9 (HVM)
-- Debian 10 (Tested)
+- Debian 10 (Tested KVM)
 * Berhasil di gunakan di vps Herza dan os debian 10
 * untuk vps isp yg lain saya tidak tau, dan os yg lain juga saya tidak tau (belum coba)
 
@@ -57,7 +46,7 @@ sudo su
 2. Update Dulu VPS NYA
 
 ```
-apt update -y && apt upgrade -y && apt dist-upgrade -y && reboot
+apt update -y && apt upgrade -y --fix-missing && update-grub && sleep 1 && reboot
 ```
 - Otomatis Akan Reboot / Hidupkan Ulang
 
@@ -68,17 +57,17 @@ apt update -y && apt upgrade -y && apt dist-upgrade -y && reboot
 - jika keluar dari vps saat lagi proses install, maka akan gagal
   
 ```
-sysctl -w net.ipv6.conf.all.disable_ipv6=1 && sysctl -w net.ipv6.conf.default.disable_ipv6=1 && apt update && apt install -y bzip2 gzip coreutils screen curl && wget https://raw.githubusercontent.com/saputribosen/XRAY-WS/main/setup.sh && chmod +x setup.sh && ./setup.sh
+wget https://raw.githubusercontent.com/aryobrokolly/XRAY-WS/main/setup.sh && chmod +x setup.sh && ./setup.sh
 ```
 
-5. jika sudah selesai,lalu ketik xmenu untuk menampilkan menu
+5. jika sudah selesai,lalu ketik menu untuk menampilkan menu
 
 ```
 menu
 ```
 7. DONE / SELESAI
 
-# Cara Perbaiki / FIX
+# Cara Perbaiki / FIXING
 - ***NOTE***
 - jika xray dan nginx mengalami error !
 - ketik
@@ -91,7 +80,6 @@ restart-xray
 ```
 
 # PENTING! INFO KODE BERIKUT
-- xmenu (untuk menampilkan menu original)
 - menu (untuk menampilkan menu modif )
 - updatedll (untuk update script)
 - restart-xray (hidupkan ulang xray)
