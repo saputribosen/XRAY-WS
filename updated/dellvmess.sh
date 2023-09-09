@@ -51,8 +51,7 @@ sed -i "/^### $user $exp/,/^},{/d" /etc/xray/config.json
 sed -i "/^### $user $exp/,/^},{/d" /etc/xray/config.json
 rm -f /etc/xray/vmess-$user-tls.json /etc/xray/vmess-$user-nontls.json
 rm -f /home/vps/public_html/ss-ws-${user}.txt
-rm -f /usr/bin/vmess/vmess-$user.txt
-rm -f /usr/bin/vmess/vmessgrpc-$user.txt
+rm -f /usr/bin/vmess/vmess-$user.txt | /usr/bin/vmess/vmessgrpc-$user.txt
 systemctl restart xray.service
 clear
 echo " "
