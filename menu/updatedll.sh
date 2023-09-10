@@ -83,6 +83,7 @@ wget -O addvmessgrpc "${airassh3}/addvmessgrpc.sh"
 wget -O viewvmess "${airassh3}/viewvmess.sh"
 wget -O dellvmess "${airassh3}/dellvmess.sh"
 wget -O rennewvmess "${airassh3}/rennewvmess.sh"
+wget -O rennewvmessntls "${airassh3}/rennewvmessntls.sh"
 wget -O addvless "${airassh3}/addvless.sh"
 wget -O dellvless "${airassh3}/dellvless.sh"
 wget -O rennewvless "${airassh3}/rennewvless.sh"
@@ -124,6 +125,7 @@ chmod +x viewvmess
 chmod +x addvmessgrpc
 chmod +x dellvmess
 chmod +x rennewvmess
+chmod +x rennewvmessntls
 chmod +x addvless
 chmod +x dellvless
 chmod +x rennewvless
