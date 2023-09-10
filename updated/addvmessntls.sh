@@ -75,6 +75,7 @@ service cron restart
 cd /usr/bin/vmess
 clear
 echo -e "" | tee -a vmessntls-${user}.txt
+echo -e "" | tee -a vmessntls-${user}.txt
 echo -e "======-VMESS-WS-======" | tee -a vmessntls-${user}.txt
 echo -e "ISP         : ${MYAD}" | tee -a vmessntls-${user}.txt
 echo -e "Region      : ${MYREG}" | tee -a vmessntls-${user}.txt
@@ -89,7 +90,7 @@ echo -e "Path        : /vmess" | tee -a vmessntls-${user}.txt
 echo -e "Created     : $hariini" | tee -a vmessntls-${user}.txt
 echo -e "Expired     : $exp" | tee -a vmessntls-${user}.txt
 echo -e "=========================" | tee -a vmessntls-${user}.txt
-echo -e "Link TLS    : ${xrayv2ray2}" | tee -a vmessntls-${user}.txt
+echo -e "Link Non TLS    : ${xrayv2ray2}" | tee -a vmessntls-${user}.txt
 echo -e "=========================" | tee -a vmessntls-${user}.txt
 echo -e "Terimakasih ${user}" | tee -a vmessntls-${user}.txt
 echo -e "" | tee -a vmessntls-${user}.txt
