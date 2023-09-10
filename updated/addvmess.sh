@@ -33,7 +33,6 @@ else
 domain=$IP
 fi
 tls="$(cat ~/log-install.txt | grep -w "XRAYS VMESS WS TLS" | cut -d: -f2|sed 's/ //g')"
-nontls="$(cat ~/log-install.txt | grep -w "XRAYS VMESS WS HTTP" | cut -d: -f2|sed 's/ //g')"
 until [[ $user =~ ^[a-zA-Z0-9_]+$ && ${CLIENT_EXISTS} == '0' ]]; do
 		read -rp "Username : " -e user
 		CLIENT_EXISTS=$(grep -wE "^### ${user}" "/etc/xray/config.json" | sort | uniq | cut -d ' ' -f 2 |  wc -l)
@@ -51,7 +50,7 @@ exp=`date -d "$masaaktif days" +"%Y-%m-%d"`
 sed -i '/#vmess$/a\### '"$user $exp"'\
 },{"id": "'""$uuid""'","alterId": '"0"',"email": "'""$user""'"' /etc/xray/config.json
 cat>/etc/xray/vmess-$user-tls.json<<EOF
-      {
+{
       "v": "2",
       "ps": "${user}",
       "add": "${domain}",
