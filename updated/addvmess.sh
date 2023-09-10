@@ -74,6 +74,7 @@ service cron restart
 cd /usr/bin/vmess
 clear
 echo -e "" | tee -a vmess-${user}.txt
+echo -e "" | tee -a vmess-${user}.txt
 echo -e "======-VMESS-WS-======" | tee -a vmess-${user}.txt
 echo -e "ISP         : ${MYAD}" | tee -a vmess-${user}.txt
 echo -e "Region      : ${MYREG}" | tee -a vmess-${user}.txt
