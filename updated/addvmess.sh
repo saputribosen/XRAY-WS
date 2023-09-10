@@ -65,27 +65,10 @@ cat>/etc/xray/vmess-$user-tls.json<<EOF
       "tls": "tls"
 }
 EOF
-cat>/etc/xray/vmess-$user-nontls.json<<EOF
-      {
-      "v": "2",
-      "ps": "${user}",
-      "add": "${domain}",
-      "port": "${nontls}",
-      "id": "${uuid}",
-      "aid": "0",
-      "net": "ws",
-      "path": "/vmess",
-      "type": "none",
-      "host": "${domain}",
-      "tls": "none"
-}
-EOF
 
 ## ubah config ke base64
 vmess_base641=$( base64 -w 0 <<< $vmess_json1 )
-vmess_base642=$( base64 -w 0 <<< $vmess_json2 )
 xrayv2ray1="vmess://$(base64 -w 0 /etc/xray/vmess-$user-tls.json)"
-xrayv2ray2="vmess://$(base64 -w 0 /etc/xray/vmess-$user-nontls.json)"
 systemctl restart xray.service
 systemctl restart xray
 service cron restart
@@ -98,7 +81,6 @@ echo -e "Region      : ${MYREG}" | tee -a vmess-${user}.txt
 echo -e "Remarks     : ${user}" | tee -a vmess-${user}.txt
 echo -e "Host        : ${domain}" | tee -a vmess-${user}.txt
 echo -e "Port TLS    : ${tls}" | tee -a vmess-${user}.txt
-echo -e "Port No TLS : ${nontls}" | tee -a vmess-${user}.txt
 echo -e "UserID/UUID : ${uuid}" | tee -a vmess-${user}.txt
 echo -e "Alter ID    : 0" | tee -a vmess-${user}.txt
 echo -e "Security    : auto" | tee -a vmess-${user}.txt
