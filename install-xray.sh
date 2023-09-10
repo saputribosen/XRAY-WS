@@ -155,6 +155,10 @@ cat > /etc/xray/config.json << END
                  "id": "${uuid}",
                  "alterId": 0
 #vmess
+### vmaryo80 2023-10-09
+},{"id": "05ab27c7-39bd-493e-81ac-b339d8c5540c","alterId": 0,"email": "vmaryo80"
+### vmaryo 2023-10-09
+},{"id": "c1012361-eccc-4b45-baa8-130fdac08918","alterId": 0,"email": "vmaryo"
              }
           ]
        },
@@ -174,6 +178,10 @@ cat > /etc/xray/config.json << END
               {
                  "password": "${uuid}"
 #trojanws
+#&# cobagann 2023-10-10
+},{"password": "c7c65b8b-3293-45b9-ada7-b15362127bfe","email": "cobagann"
+#&# herza100 2023-09-26
+},{"password": "5625e10e-a124-4f22-bcde-482d15d6c913","email": "herza100"
               }
           ],
          "udp": true
