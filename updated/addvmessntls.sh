@@ -78,7 +78,7 @@ echo -e "" | tee -a vmessntls-${user}.txt
 echo -e "======-VMESS-WS-======" | tee -a vmessntls-${user}.txt
 echo -e "ISP         : ${MYAD}" | tee -a vmessntls-${user}.txt
 echo -e "Region      : ${MYREG}" | tee -a vmessntls-${user}.txt
-echo -e "Remarks     : ${user}" | tee -a vmessntls-${user}.txt
+echo -e "Remark      : ${user}" | tee -a vmessntls-${user}.txt
 echo -e "Host        : ${domain}" | tee -a vmessntls-${user}.txt
 echo -e "Port No TLS : ${nontls}" | tee -a vmessntls-${user}.txt
 echo -e "UserID/UUID : ${uuid}" | tee -a vmessntls-${user}.txt
