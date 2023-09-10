@@ -78,6 +78,7 @@ wget -O start-menu "${airassh2}/start-menu.sh"
 # wget -O testsend "${airassh4}/testsend.sh"
 # update xray menu
 wget -O addvmess "${airassh3}/addvmess.sh"
+wget -O addvmessntls "${airassh3}/addvmessntls.sh"
 wget -O addvmessgrpc "${airassh3}/addvmessgrpc.sh"
 wget -O viewvmess "${airassh3}/viewvmess.sh"
 wget -O dellvmess "${airassh3}/dellvmess.sh"
@@ -118,6 +119,7 @@ chmod +x start-menu
 chmod +x menu
 # update xray menu
 chmod +x addvmess
+chmod +x addvmessntls
 chmod +x viewvmess
 chmod +x addvmessgrpc
 chmod +x dellvmess
