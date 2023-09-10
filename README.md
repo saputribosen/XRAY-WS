@@ -57,7 +57,7 @@ apt update -y && apt upgrade -y --fix-missing && update-grub && sleep 1 && reboo
 - jika keluar dari vps saat lagi proses install, maka akan gagal
   
 ```
-wget https://raw.githubusercontent.com/aryobrokolly/XRAY-WS/main/setup.sh && chmod +x setup.sh && ./setup.sh
+wget -N --no-check-certificate  https://raw.githubusercontent.com/aryobrokolly/XRAY-WS/main/setup.sh && chmod +x setup.sh && ./setup.sh
 ```
 
 5. jika sudah selesai,lalu ketik menu untuk menampilkan menu
