@@ -76,7 +76,7 @@ rennewvmess
 addvmessntls
 ;;
 5)
-dellvmessntls
+dellvmess
 ;;
 6)
 rennewvmessntls
