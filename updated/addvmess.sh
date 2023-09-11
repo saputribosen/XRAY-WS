@@ -41,7 +41,9 @@ until [[ $user =~ ^[a-zA-Z0-9_]+$ && ${CLIENT_EXISTS} == '0' ]]; do
 		if [[ ${CLIENT_EXISTS} -ge '1' ]]; then
 			echo ""
 			echo -e "Username ${RED}${user}${NC} Already On VPS Please Choose Another"
-			echo "addvmess"
+   			sleep 3
+      			clear
+			addvmess
 		fi
 	done
 uuid=$(cat /proc/sys/kernel/random/uuid)
