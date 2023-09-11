@@ -32,7 +32,6 @@ domain=$(cat /etc/xray/domain)
 else
 domain=$IP
 fi
-tls="$(cat ~/log-install.txt | grep -w "XRAYS VMESS WS TLS" | cut -d: -f2|sed 's/ //g')"
 nontls="$(cat ~/log-install.txt | grep -w "XRAYS VMESS WS HTTP" | cut -d: -f2|sed 's/ //g')"
 until [[ $user =~ ^[a-zA-Z0-9_]+$ && ${CLIENT_EXISTS} == '0' ]]; do
 		read -rp "Username : " -e user
@@ -61,7 +60,7 @@ cat>/etc/xray/vmess-$user-nontls.json<<EOF
       "net": "ws",
       "path": "/vmess",
       "type": "none",
-      "host": "${domain}",
+      "host": "",
       "tls": "none"
 }
 EOF
