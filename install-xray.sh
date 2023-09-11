@@ -155,11 +155,7 @@ cat > /etc/xray/config.json << END
                  "id": "${uuid}",
                  "alterId": 0
 #vmess
-### vmaryo80 2023-10-09
-},{"id": "05ab27c7-39bd-493e-81ac-b339d8c5540c","alterId": 0,"email": "vmaryo80"
-### vmaryo 2023-10-09
-},{"id": "c1012361-eccc-4b45-baa8-130fdac08918","alterId": 0,"email": "vmaryo"
-             }
+            }
           ]
        },
        "streamSettings":{
