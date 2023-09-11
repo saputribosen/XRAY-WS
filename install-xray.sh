@@ -174,10 +174,6 @@ cat > /etc/xray/config.json << END
               {
                  "password": "${uuid}"
 #trojanws
-#&# cobagann 2023-10-10
-},{"password": "c7c65b8b-3293-45b9-ada7-b15362127bfe","email": "cobagann"
-#&# herza100 2023-09-26
-},{"password": "5625e10e-a124-4f22-bcde-482d15d6c913","email": "herza100"
               }
           ],
          "udp": true
