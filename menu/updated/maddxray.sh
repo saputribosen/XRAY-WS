@@ -31,11 +31,11 @@ echo -e "$BLUE  ╔════════════════════�
 echo -e "$BLUE  ║$NC $BRED                           XRAYS-MultiPort                           $BLUE ║"
 echo -e "$BLUE  ╚═══════════════════════════════════════════════════════════════════════╝$NC"
 echo -e "$BLUE  ╔═══════════════════════════════════╦═══════════════════════════════════╗"
-echo -e "$BLUE  ║ $ORANGE        ✶ VMESS WS ✶       $BLUE       ║  $ORANGE      ✶ VMESS NTLS ✶         $BLUE   ║"
+echo -e "$BLUE  ║ $ORANGE        ✶ VMESS WS ✶       $BLUE       ║  $ORANGE      ✶ VLESS NTLS ✶         $BLUE   ║"
 echo -e "$BLUE  ║-----------------------------------║-----------------------------------║"
-echo -e "$BLUE  ╠➣$NC 1. Create Account XRAYS Vmess$BLUE    ╠➣$NC 4. Create Account Vmess NTls  $BLUE   ║ "
-echo -e "$BLUE  ╠➣$NC 2. Delete Account XRAYS Vmess$BLUE    ╠➣$NC 5. Delete Account Vmess NTls  $BLUE   ║ "
-echo -e "$BLUE  ╠➣$NC 3. Rennew Account XRAYS Vmess$BLUE    ╠➣$NC 6. Rennew Account Vmess NTls  $BLUE   ║ "
+echo -e "$BLUE  ╠➣$NC 1. Create Account XRAYS Vmess$BLUE    ╠➣$NC 4. Create Account Vless NTls  $BLUE   ║ "
+echo -e "$BLUE  ╠➣$NC 2. Delete Account XRAYS Vmess$BLUE    ╠➣$NC 5. Delete Account Vless NTls  $BLUE   ║ "
+echo -e "$BLUE  ╠➣$NC 3. Rennew Account XRAYS Vmess$BLUE    ╠➣$NC 6. Rennew Account Vless NTls  $BLUE   ║ "
 echo -e "$BLUE  ╠➣$NC                              $BLUE    ╠➣$NC                               $BLUE   ║ "
 echo -e "$BLUE  ║-----------------------------------║-----------------------------------║"
 echo -e "$BLUE  ╚═══════════════════════════════════╩═══════════════════════════════════╝$NC"
@@ -73,13 +73,13 @@ dellvmess
 rennewvmess
 ;;
 4)
-addvmessntls
+addvless
 ;;
 5)
-dellvmess
+dellvless
 ;;
 6)
-rennewvmessntls
+rennewvless
 ;;
 7)
 addtrojan
