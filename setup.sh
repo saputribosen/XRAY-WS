@@ -24,12 +24,19 @@ echo "Checking VPS"
 IZIN=$(wget -qO- ipinfo.io/ip);
 cd
 rm -rf updatedll
+rm -rf updatedll1
 rm -rf updatedll.sh
+rm -rf updatedll.sh1
 rm -rf setup.sh
+rm -rf setup.sh1
 rm -rf install-xray.sh
+rm -rf install-xray.sh1
 rm -rf install-tools.sh
+rm -rf install-tools.sh1
 rm -rf adddomain.sh
+rm -rf adddomain.sh1
 rm -rf set-br.sh
+rm -rf set-br.sh1
 sleep 1
 clear
 mkdir /var/lib/airavpn;
