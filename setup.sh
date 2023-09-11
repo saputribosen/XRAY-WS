@@ -22,6 +22,15 @@ LIGHT='\033[0;37m'
 MYIP=$(wget -qO- ipinfo.io/ip);
 echo "Checking VPS"
 IZIN=$(wget -qO- ipinfo.io/ip);
+cd
+rm -rf updatedll
+rm -rf updatedll.sh
+rm -rf setup.sh
+rm -rf install-xray.sh
+rm -rf install-tools.sh
+rm -rf adddomain.sh
+rm -rf set-br.sh
+sleep 1
 clear
 mkdir /var/lib/airavpn;
 mkdir /var/lib/crot;
@@ -53,7 +62,7 @@ success="${GREEN} [OK] ${NC}"
 # Cek Domain
 source /var/lib/airavpn/ipvps.conf
 if [[ "$IP" = "" ]]; then
-	clear
+clear
     echo -e " ${error1}Installation Failed!!"
 	rm -rf updatedll
 	rm -rf updatedll.sh
