@@ -155,7 +155,7 @@ cat > /etc/xray/config.json << END
                  "id": "${uuid}",
                  "alterId": 0
 #vmess
-            }
+             }
           ]
        },
        "streamSettings":{
