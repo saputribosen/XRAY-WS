@@ -131,6 +131,7 @@ else
 	rm -rf setup.sh
 	rm -rf install-xray.sh
 	rm -rf install-tools.sh
+	rm -rf adddomain
 	rm -rf adddomain.sh
 	rm -rf set-br.sh
 	sleep 1
