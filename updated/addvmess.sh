@@ -33,6 +33,7 @@ else
 domain=$IP
 fi
 tls="$(cat ~/log-install.txt | grep -w "XRAYS VMESS WS TLS" | cut -d: -f2|sed 's/ //g')"
+nontls="$(cat ~/log-install.txt | grep -w "XRAYS VMESS WS HTTP" | cut -d: -f2|sed 's/ //g')"
 until [[ $user =~ ^[a-zA-Z0-9_]+$ && ${CLIENT_EXISTS} == '0' ]]; do
 		read -rp "Username : " -e user
 		CLIENT_EXISTS=$(grep -wE "^### ${user}" "/etc/xray/config.json" | sort | uniq | cut -d ' ' -f 2 |  wc -l)
@@ -64,10 +65,27 @@ cat>/etc/xray/vmess-$user-tls.json<<EOF
       "tls": "tls"
 }
 EOF
+cat>/etc/xray/vmess-$user-nontls.json<<EOF
+      {
+      "v": "2",
+      "ps": "${user}",
+      "add": "${domain}",
+      "port": "${nontls}",
+      "id": "${uuid}",
+      "aid": "0",
+      "net": "ws",
+      "path": "/vmess",
+      "type": "none",
+      "host": "${domain}",
+      "tls": "none"
+}
+EOF
 
 ## ubah config ke base64
 vmess_base641=$( base64 -w 0 <<< $vmess_json1 )
+vmess_base642=$( base64 -w 0 <<< $vmess_json2 )
 xrayv2ray1="vmess://$(base64 -w 0 /etc/xray/vmess-$user-tls.json)"
+xrayv2ray2="vmess://$(base64 -w 0 /etc/xray/vmess-$user-nontls.json)"
 systemctl restart xray.service
 systemctl restart xray
 service cron restart
@@ -80,6 +98,7 @@ echo -e "ISP         : ${MYAD}" | tee -a vmess-${user}.txt
 echo -e "Region      : ${MYREG}" | tee -a vmess-${user}.txt
 echo -e "Remarks     : ${user}" | tee -a vmess-${user}.txt
 echo -e "Host        : ${domain}" | tee -a vmess-${user}.txt
+echo -e "Port No TLS : ${nontls}" | tee -a vmess-${user}.txt
 echo -e "Port TLS    : ${tls}" | tee -a vmess-${user}.txt
 echo -e "UserID/UUID : ${uuid}" | tee -a vmess-${user}.txt
 echo -e "Alter ID    : 0" | tee -a vmess-${user}.txt
@@ -90,6 +109,8 @@ echo -e "Created     : $hariini" | tee -a vmess-${user}.txt
 echo -e "Expired     : $exp" | tee -a vmess-${user}.txt
 echo -e "=========================" | tee -a vmess-${user}.txt
 echo -e "Link TLS    : ${xrayv2ray1}" | tee -a vmess-${user}.txt
+echo -e "=========================" | tee -a vmess-${user}.txt
+echo -e "Link No TLS    : ${xrayv2ray2}" | tee -a vmess-${user}.txt
 echo -e "=========================" | tee -a vmess-${user}.txt
 echo -e "Terimakasih ${user}" | tee -a vmess-${user}.txt
 echo -e "" | tee -a vmess-${user}.txt
