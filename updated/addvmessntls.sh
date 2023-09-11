@@ -73,23 +73,23 @@ systemctl restart xray
 service cron restart
 cd /usr/bin/vmess
 clear
-echo -e "" | tee -a vmessntls-${user}.txt
-echo -e "" | tee -a vmessntls-${user}.txt
-echo -e "======-VMESS-WS-======" | tee -a vmessntls-${user}.txt
-echo -e "ISP         : ${MYAD}" | tee -a vmessntls-${user}.txt
-echo -e "Region      : ${MYREG}" | tee -a vmessntls-${user}.txt
-echo -e "Remark      : ${user}" | tee -a vmessntls-${user}.txt
-echo -e "Host        : ${domain}" | tee -a vmessntls-${user}.txt
-echo -e "Port No TLS : ${nontls}" | tee -a vmessntls-${user}.txt
-echo -e "UserID/UUID : ${uuid}" | tee -a vmessntls-${user}.txt
-echo -e "Alter ID    : 0" | tee -a vmessntls-${user}.txt
-echo -e "Security    : auto" | tee -a vmessntls-${user}.txt
-echo -e "Network     : ws" | tee -a vmessntls-${user}.txt
-echo -e "Path        : /vmess" | tee -a vmessntls-${user}.txt
-echo -e "Created     : $hariini" | tee -a vmessntls-${user}.txt
-echo -e "Expired     : $exp" | tee -a vmessntls-${user}.txt
-echo -e "=========================" | tee -a vmessntls-${user}.txt
-echo -e "Link Non TLS    : ${xrayv2ray2}" | tee -a vmessntls-${user}.txt
-echo -e "=========================" | tee -a vmessntls-${user}.txt
-echo -e "Terimakasih ${user}" | tee -a vmessntls-${user}.txt
-echo -e "" | tee -a vmessntls-${user}.txt
+echo -e "" | tee -a vmess-${user}-ntls.txt
+echo -e "" | tee -a vmess-${user}-ntls.txt
+echo -e "======-VMESS-WS-======" | tee -a vmess-${user}-ntls.txt
+echo -e "ISP         : ${MYAD}" | tee -a vmess-${user}-ntls.txt
+echo -e "Region      : ${MYREG}" | tee -a vmess-${user}-ntls.txt
+echo -e "Remark      : ${user}" | tee -a vmess-${user}-ntls.txt
+echo -e "Host        : ${domain}" | tee -a vmess-${user}-ntls.txt
+echo -e "Port No TLS : ${nontls}" | tee -a vmess-${user}-ntls.txt
+echo -e "UserID/UUID : ${uuid}" | tee -a vmess-${user}-ntls.txt
+echo -e "Alter ID    : 0" | tee -a vmess-${user}-ntls.txt
+echo -e "Security    : auto" | tee -a vmess-${user}-ntls.txt
+echo -e "Network     : ws" | tee -a vmess-${user}-ntls
+echo -e "Path        : /vmess" | tee -a vmess-${user}-ntls
+echo -e "Created     : $hariini" | tee -a vmess-${user}-ntls
+echo -e "Expired     : $exp" | tee -a vmess-${user}-ntls
+echo -e "=========================" | tee -a vmess-${user}-ntls
+echo -e "Link Non TLS    : ${xrayv2ray2}" | tee -a vmess-${user}-ntls
+echo -e "=========================" | tee -a vmess-${user}-ntls
+echo -e "Terimakasih ${user}" | tee -a vmess-${user}-ntls
+echo -e "" | tee -a vmess-${user}-ntls
