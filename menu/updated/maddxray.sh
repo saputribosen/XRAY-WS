@@ -43,11 +43,12 @@ echo -e "$BLUE  ╠➣$NC                              $BLUE    ╠➣$NC       
 echo -e "$BLUE  ║-----------------------------------║-----------------------------------║"
 echo -e "$BLUE  ╚═══════════════════════════════════╩═══════════════════════════════════╝$NC"
 echo -e "$BLUE  ╔═══════════════════════════════════╦═══════════════════════════════════╗"
-echo -e "$BLUE  ║$ORANGE         ✶ TROJAN WS ✶      $BLUE       ║$ORANGE     ✶ SHADOWSOCKS WS ✶            $BLUE║"
+echo -e "$BLUE  ║$ORANGE         ✶ VLESS WS ✶      $BLUE       ║$ORANGE     ✶ SHADOWSOCKS WS ✶            $BLUE║"
 echo -e "$BLUE  ║-----------------------------------║-----------------------------------║"
-echo -e "$BLUE  ╠➣$NC 7. Create Account XRAYS Trojan $BLUE  ╠➣$NC 10. Create Account ShadowSocks $BLUE  ║"
-echo -e "$BLUE  ╠➣$NC 8. Delete Account XRAYS Trojan $BLUE  ╠➣$NC 11. Delete Account ShadowSocks $BLUE  ║"
-echo -e "$BLUE  ╠➣$NC 9. Rennew Account XRAYS Trojan $BLUE  ╠➣$NC 12. Rennew Account ShadowSocks $BLUE  ║"
+echo -e "$BLUE  ╠➣$NC 12. Create Account XRAYS Vless $BLUE  ╠➣$NC 16. Create Account ShadowSocks $BLUE  ║"
+echo -e "$BLUE  ╠➣$NC 13. Delete Account XRAYS Vless $BLUE  ╠➣$NC 17. Delete Account ShadowSocks $BLUE  ║"
+echo -e "$BLUE  ╠➣$NC 14. Rennew Account XRAYS Vless $BLUE  ╠➣$NC 18. Rennew Account ShadowSocks $BLUE  ║"
+echo -e "$BLUE  ╠➣$NC 15. Detail Account XRAYS Vless $BLUE  ╠➣$NC 19. Detail Account ShadowSocks $BLUE  ║"
 echo -e "$BLUE  ║-----------------------------------║-----------------------------------║"
 echo -e "$BLUE  ╚═══════════════════════════════════╩═══════════════════════════════════╝$NC"
 echo -e "$BLUE  ╔═══════════════════════════════════╦═══════════════════════════════════╗"
@@ -62,49 +63,58 @@ case $menu in
 addvmess
 ;;
 2)
-dellvmess
-;;
-3)
-rennewvmess
-;;
-4)
 addvmessntls
 ;;
+3)
+addvmessgrpc
+;;
+4)
+dellvmess
+;;
 5)
-dellvmessntls
+rennewvmess
 ;;
 6)
-rennewvmessntls
+viewewvmess
 ;;
 7)
 addtrojan
 ;;
 8)
-delltrojan
-;;
-9)
-rennewtrojan
-;;
-10)
-addss
-;;
-11)
-dellss
-;;
-12)
-rennewss
-;;
-13)
 addtrojangrpc
 ;;
-14)
-addvmessgrpc
+9)
+deltrojan
 ;;
-15)
+10)
+rennewtrojan
+;;
+11)
 viewtrojan
 ;;
+12)
+addvless
+;;
+13)
+dellvless
+;;
+14)
+rennewvless
+;;
+15)
+viewvless
+;;
 16)
-viewvmess
+addss
+;;
+17)
+dellss
+;;
+18)
+rennewss
+;;
+19)
+detailss
 ;;
 0)
 menu
