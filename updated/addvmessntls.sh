@@ -84,12 +84,12 @@ echo -e "Port No TLS : ${nontls}" | tee -a vmess-${user}-ntls.txt
 echo -e "UserID/UUID : ${uuid}" | tee -a vmess-${user}-ntls.txt
 echo -e "Alter ID    : 0" | tee -a vmess-${user}-ntls.txt
 echo -e "Security    : auto" | tee -a vmess-${user}-ntls.txt
-echo -e "Network     : ws" | tee -a vmess-${user}-ntls
-echo -e "Path        : /vmaryo" | tee -a vmess-${user}-ntls
-echo -e "Created     : $hariini" | tee -a vmess-${user}-ntls
-echo -e "Expired     : $exp" | tee -a vmess-${user}-ntls
-echo -e "=========================" | tee -a vmess-${user}-ntls
-echo -e "Link Non TLS    : ${xrayv2ray2}" | tee -a vmess-${user}-ntls
-echo -e "=========================" | tee -a vmess-${user}-ntls
-echo -e "Terimakasih ${user}" | tee -a vmess-${user}-ntls
-echo -e "" | tee -a vmess-${user}-ntls
+echo -e "Network     : ws" | tee -a vmess-${user}-ntls.txt
+echo -e "Path        : /vmaryo" | tee -a vmess-${user}-ntls.txt
+echo -e "Created     : $hariini" | tee -a vmess-${user}-ntls.txt
+echo -e "Expired     : $exp" | tee -a vmess-${user}-ntls.txt
+echo -e "=========================" | tee -a vmess-${user}-ntls.txt
+echo -e "Link Non TLS    : ${xrayv2ray2}" | tee -a vmess-${user}-ntls.txt
+echo -e "=========================" | tee -a vmess-${user}-ntls.txt
+echo -e "Terimakasih ${user}" | tee -a vmess-${user}-ntls.txt
+echo -e "" | tee -a vmess-${user}-ntls.txt
