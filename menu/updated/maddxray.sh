@@ -114,7 +114,7 @@ dellss
 rennewss
 ;;
 19)
-detailss
+viewss
 ;;
 0)
 menu
