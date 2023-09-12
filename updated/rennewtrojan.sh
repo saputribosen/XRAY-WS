@@ -49,7 +49,7 @@ user=$(grep -E "^#&# " "/etc/xray/config.json" | sort | uniq | cut -d ' ' -f 2 |
 exp=$(grep -E "^#&# " "/etc/xray/config.json" | sort | uniq | cut -d ' ' -f 3 | sed -n "${CLIENT_NUMBER}"p)
 lokasi=/etc/xray/config.json
 lok=/usr/bin/trojan/trojan-$user.txt
-lokgrpc=/usr/bin/trojan/trojangrpc-$user.txt
+lokgrpc=/usr/bin/trojan/trojan-${user}-grpc.txt
 
 clear
 echo -e ""
