@@ -62,7 +62,7 @@ echo -e "Expired  : $exp ${NC}"
 echo -e "==============================="
 read -p "Add Expired (Days): " masaaktif
 echo -e "Please Wait...."
-sleep 3
+sleep 1
 now=$(date +%Y-%m-%d)
 d1=$(date -d "$exp" +%s)
 d2=$(date -d "$now" +%s)
