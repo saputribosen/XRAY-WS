@@ -48,7 +48,7 @@ NUMBER_OF_CLIENTS=$(grep -E "^### " "/etc/xray/config.json" | sort | uniq | cut 
 user=$(grep -E "^### " "/etc/xray/config.json" | sort | uniq | cut -d ' ' -f 2 | sed -n "${CLIENT_NUMBER}"p)
 exp=$(grep -E "^### " "/etc/xray/config.json" | sort | uniq | cut -d ' ' -f 3 | sed -n "${CLIENT_NUMBER}"p)
 sed -i "/^### $user $exp/,/^},{/d" /etc/xray/config.json
-rm -f /etc/xray/vmess-$user.json || /etc/xray/vmess-$user-ntls.json
+rm -f /etc/xray/vmess-$user-tls.json || /etc/xray/vmess-$user-ntls.json
 rm -f /home/vps/public_html/ss-ws-${user}.txt
 rm -f /usr/bin/vmess/vmess-$user.txt || /usr/bin/vmess/vmess-$user-ntls.txt || /usr/bin/vmess/vmess-$user-grpc.txt
 systemctl restart xray.service
