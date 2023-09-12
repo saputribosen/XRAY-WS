@@ -49,7 +49,7 @@ user=$(grep -E "^### " "/etc/xray/config.json" | sort | uniq | cut -d ' ' -f 2 |
 exp=$(grep -E "^### " "/etc/xray/config.json" | sort | uniq | cut -d ' ' -f 3 | sed -n "${CLIENT_NUMBER}"p)
 clear
 echo " "
-cat /usr/bin/vmess/vmess-$user.txt
+cat /usr/bin/vmess/vmess-$user.txt /usr/bin/vmess/vmess-$user-ntls.txt
 systemctl restart xray.service
 echo " "
 echo -e ""
