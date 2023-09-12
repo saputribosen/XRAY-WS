@@ -53,7 +53,7 @@ systemctl restart xray.service
 clear
 echo " "
 echo "==============================="
-echo "    trojan Account Deleted     "
+echo "    Trojan Account Deleted     "
 echo "==============================="
 echo "Username  : $user"
 echo "Expired   : $exp"
