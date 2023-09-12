@@ -75,21 +75,22 @@ systemctl restart xray
 service cron restart
 cd /usr/bin/vmess
 clear
-echo -e "" | tee -a vmessgrpc-${user}.txt
-echo -e "======-VMESS-GRPC-======" | tee -a vmessgrpc-${user}.txt
-echo -e "ISP         : ${MYAD}" | tee -a vmessgrpc-${user}.txt
-echo -e "Region      : ${MYREG}" | tee -a vmessgrpc-${user}.txt
-echo -e "Remarks     : ${user}" | tee -a vmessgrpc-${user}.txt
-echo -e "Host        : ${domain}" | tee -a vmessgrpc-${user}.txt
-echo -e "Port        : ${tls}" | tee -a vmessgrpc-${user}.txt
-echo -e "UserID/UUID : ${uuid}" | tee -a vmessgrpc-${user}.txt
-echo -e "Alter ID    : 0" | tee -a vmessgrpc-${user}.txt
-echo -e "Security    : auto" | tee -a vmessgrpc-${user}.txt
-echo -e "Network     : grPC" | tee -a vmessgrpc-${user}.txt
-echo -e "Servicename: vmess-grpc" | tee -a vmessgrpc-${user}.txt
-echo -e "Created     : $hariini" | tee -a vmessgrpc-${user}.txt
-echo -e "Expired     : $exp" | tee -a vmessgrpc-${user}.txt
-echo -e "=========================" | tee -a vmessgrpc-${user}.txt
-echo -e "Link GRPC   : ${xrayv2ray3}" | tee -a vmessgrpc-${user}.txt
-echo -e "=========================" | tee -a vmessgrpc-${user}.txt
-echo -e "Terimakasih ${user}" | tee -a vmessgrpc-${user}.txt
+echo -e "" | tee -a vmess-${user}-grpc.txt
+echo -e "======-VMESS-GRPC-======" | tee -a vmess-${user}-grpc.txt
+echo -e "ISP         : ${MYAD}" | tee -a vmess-${user}-grpc.txt
+echo -e "Region      : ${MYREG}" | tee -a vmess-${user}-grpc.txt
+echo -e "Remarks     : ${user}" | tee -a vmess-${user}-grpc.txt
+echo -e "Host        : ${domain}" | tee -a vmess-${user}-grpc.txt
+echo -e "Port        : ${tls}" | tee -a vmess-${user}-grpc.txt
+echo -e "UserID/UUID : ${uuid}" | tee -a vmess-${user}-grpc.txt
+echo -e "Alter ID    : 0" | tee -a vmess-${user}-grpc.txt
+echo -e "Security    : auto" | tee -a vmess-${user}-grpc.txt
+echo -e "Network     : grPC" | tee -a vmess-${user}-grpc.txt
+echo -e "Servicename: vmess-grpc" | tee -a vmess-${user}-grpc.txt
+echo -e "Created     : $hariini" | tee -a vmess-${user}-grpc.txt
+echo -e "Expired     : $exp" | tee -a vmess-${user}-grpc.txt
+echo -e "=========================" | tee -a vmess-${user}-grpc.txt
+echo -e "Link GRPC   : ${xrayv2ray3}" | tee -a vmess-${user}-grpc.txt
+echo -e "=========================" | tee -a vmess-${user}-grpc.txt
+echo -e "Terimakasih ${user}" | tee -a vmess-${user}-grpc.txt
+echo -e "" | tee -a vmess-${user}-grpc.txt
