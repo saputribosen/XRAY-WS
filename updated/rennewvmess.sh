@@ -50,6 +50,7 @@ user=$(grep -E "^### " "/etc/xray/config.json" | sort | uniq | cut -d ' ' -f 2 |
 exp=$(grep -E "^### " "/etc/xray/config.json" | sort | uniq | cut -d ' ' -f 3 | sed -n "${CLIENT_NUMBER}"p)
 lokasi=/etc/xray/config.json
 lok=/usr/bin/vmess/vmess-$user.txt
+lokntls=/usr/bin/vmess/vmess-$user-ntls.txt
 
 clear
 echo -e ""
@@ -69,7 +70,7 @@ exp2=$(( (d1 - d2) / 86400 ))
 exp3=$(($exp2 + $masaaktif))
 exp4=`date -d "$exp3 days" +"%Y-%m-%d"`
 sed -i "/#&# $user $exp/c\\#&# $user $exp4" $lokasi
-sed -i "/Expired     : $exp/c\\Expired     : $exp4" $lok
+sed -i "/Expired     : $exp/c\\Expired     : $exp4" "$lok" || sed -i "/Expired     : $exp/c\\Expired     : $exp4" "$lokntls"
 systemctl restart xray.service
 service cron restart
 clear
