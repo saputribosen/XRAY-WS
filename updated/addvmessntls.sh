@@ -58,7 +58,7 @@ cat>/etc/xray/vmess-$user-nontls.json<<EOF
       "id": "${uuid}",
       "aid": "0",
       "net": "ws",
-      "path": "/xrayvws",
+      "path": "/vmaryo",
       "type": "none",
       "host": "",
       "tls": "none"
@@ -85,7 +85,7 @@ echo -e "UserID/UUID : ${uuid}" | tee -a vmess-${user}-ntls.txt
 echo -e "Alter ID    : 0" | tee -a vmess-${user}-ntls.txt
 echo -e "Security    : auto" | tee -a vmess-${user}-ntls.txt
 echo -e "Network     : ws" | tee -a vmess-${user}-ntls
-echo -e "Path        : /vmess" | tee -a vmess-${user}-ntls
+echo -e "Path        : /vmaryo" | tee -a vmess-${user}-ntls
 echo -e "Created     : $hariini" | tee -a vmess-${user}-ntls
 echo -e "Expired     : $exp" | tee -a vmess-${user}-ntls
 echo -e "=========================" | tee -a vmess-${user}-ntls
