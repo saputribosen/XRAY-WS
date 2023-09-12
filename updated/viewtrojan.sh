@@ -52,7 +52,7 @@ echo " "
 if [ -s "/usr/bin/trojan/trojan-$user.txt" ]; then
     cat "/usr/bin/trojan/trojan-$user.txt"
 else
-    cat "/usr/bin/trojan/trojangrpc-$user.txt"
+    cat "/usr/bin/trojan/trojan-${user}-grpc.txt"
 fi
 systemctl restart xray.service
 echo " "
