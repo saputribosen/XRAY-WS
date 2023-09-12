@@ -57,20 +57,20 @@ service cron restart
 #tampil log.txt
 cd /usr/bin/trojan
 clear
-echo -e "" | tee -a trojangrpc-${user}.txt
-echo -e "======-TROJAN-GRPC======" | tee -a trojangrpc-${user}.txt
-echo -e "ISP        : ${MYAD}" | tee -a trojangrpc-${user}.txt
-echo -e "Region     : ${MYREG}" | tee -a trojangrpc-${user}.txt
-echo -e "Remark     : ${user}" | tee -a trojangrpc-${user}.txt
-echo -e "Host       : ${domain}" | tee -a trojangrpc-${user}.txt
-echo -e "Port       : ${tr}" | tee -a trojangrpc-${user}.txt
-echo -e "Password   : ${uuid}" | tee -a trojangrpc-${user}.txt
-echo -e "Network    : gRPC" | tee -a trojangrpc-${user}.txt
-echo -e "ServiceName: aryo-grpc" | tee -a trojangrpc-${user}.txt
-echo -e "Created    : $hariini" | tee -a trojangrpc-${user}.txt
-echo -e "Expired    : $exp" | tee -a trojangrpc-${user}.txt
-echo -e "==========================" | tee -a trojangrpc-${user}.txt
+echo -e "" | tee -a trojan-${user}-grpc.txt
+echo -e "======-TROJAN-GRPC======" | tee -a trojan-${user}-grpc.txt
+echo -e "ISP        : ${MYAD}" | tee -a trojan-${user}-grpc.txt
+echo -e "Region     : ${MYREG}" | tee -a trojan-${user}-grpc.txt
+echo -e "Remark     : ${user}" | tee -a trojan-${user}-grpc.txt
+echo -e "Host       : ${domain}" | tee -a trojan-${user}-grpc.txt
+echo -e "Port       : ${tr}" | tee -a trojan-${user}-grpc.txt
+echo -e "Password   : ${uuid}" | tee -a trojan-${user}-grpc.txt
+echo -e "Network    : gRPC" | tee -a trojan-${user}-grpc.txt
+echo -e "ServiceName: aryo-grpc" | tee -a trojan-${user}-grpc.txt
+echo -e "Created    : $hariini" | tee -a trojan-${user}-grpc.txt
+echo -e "Expired    : $exp" | tee -a trojan-${user}-grpc.txt
+echo -e "==========================" | tee -a trojan-${user}-grpc.txt
 echo -e "Link trojan gRPC  : ${trojanlinkgrpc}" | tee -a trojan-${user}.txt
-echo -e "==========================" | tee -a trojangrpc-${user}.txt
-echo -e "Terimakasih ${user}" | tee -a trojangrpc-${user}.txt
-echo -e "" | tee -a trojangrpc-${user}.txt
+echo -e "==========================" | tee -a trojan-${user}-grpc.txt
+echo -e "Terimakasih ${user}" | tee -a trojan-${user}-grpc.txt
+echo -e "" | tee -a trojan-${user}-grpc.txt
