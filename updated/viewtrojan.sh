@@ -49,7 +49,11 @@ user=$(grep -E "^#&# " "/etc/xray/config.json" | sort | uniq | cut -d ' ' -f 2 |
 exp=$(grep -E "^#&# " "/etc/xray/config.json" | sort | uniq | cut -d ' ' -f 3 | sed -n "${CLIENT_NUMBER}"p)
 clear
 echo " "
-cat /usr/bin/trojan/trojan-$user.txt
+if [ -s "/usr/bin/trojan/trojan-$user.txt" ]; then
+    cat "/usr/bin/trojan/trojan-$user.txt"
+else
+    cat "/usr/bin/trojan/trojangrpc-$user.txt"
+fi
 systemctl restart xray.service
 echo " "
 echo -e ""
