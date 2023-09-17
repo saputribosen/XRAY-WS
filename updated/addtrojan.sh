@@ -74,3 +74,6 @@ echo -e "Link Trojan WS  : ${trojanlinkws}" | tee -a trojan-${user}.txt
 echo -e "==========================" | tee -a trojan-${user}.txt
 echo -e "Terimakasih ${user}" | tee -a trojan-${user}.txt
 echo -e ""
+echo -e "\e[1;31m     [*][*][*]======================================[*][*][*]"
+echo ""
+read -sp " Press ENTER to go back"
