@@ -56,7 +56,7 @@ echo -e "$BLUE  ║                                 $BLUE  ╠➣$NC 0. Back To 
 echo -e "$BLUE  ║-----------------------------------║-----------------------------------║"
 echo -e "$BLUE  ╚═══════════════════════════════════╩═══════════════════════════════════╝$NC"
 
-read -p " ➣ Select From Options [ 0 - 16 ]:  " menu
+read -p " ➣ Select From Options [ 0 - 19 ]:  " menu
 echo -e ""
 case $menu in
 1)
