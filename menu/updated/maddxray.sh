@@ -75,7 +75,7 @@ dellvmess
 rennewvmess
 ;;
 6)
-viewewvmess
+viewvmess
 ;;
 7)
 addtrojan
@@ -84,7 +84,7 @@ addtrojan
 addtrojangrpc
 ;;
 9)
-deltrojan
+delltrojan
 ;;
 10)
 rennewtrojan
