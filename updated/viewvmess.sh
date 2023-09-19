@@ -51,9 +51,12 @@ clear
 echo " "
 if [ -s "/usr/bin/vmess/vmess-$user.txt" ]; then
     cat "/usr/bin/vmess/vmess-$user.txt"
-else
+elif [ -s "/usr/bin/vmess/vmess-$user-ntls.txt" ]; then
     cat "/usr/bin/vmess/vmess-$user-ntls.txt"
+else
+    echo "File not found"
 fi
+
 systemctl restart xray.service
 echo " "
 echo -e ""
