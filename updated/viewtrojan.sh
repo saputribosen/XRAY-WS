@@ -51,9 +51,12 @@ clear
 echo " "
 if [ -s "/usr/bin/trojan/trojan-$user.txt" ]; then
     cat "/usr/bin/trojan/trojan-$user.txt"
-else
+elif [ -s "/usr/bin/trojan/trojan-${user}-grpc.txt" ]; then
     cat "/usr/bin/trojan/trojan-${user}-grpc.txt"
+else
+    echo "File not found"
 fi
+
 systemctl restart xray.service
 echo " "
 echo -e ""
