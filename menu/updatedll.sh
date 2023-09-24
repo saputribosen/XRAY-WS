@@ -99,6 +99,7 @@ wget -O adddomain "${airassh3}/adddomain.sh"
 wget -O chngedomain "${airassh3}/chngedomain.sh"
 wget -O chngeport "${airassh3}/chngeport.sh"
 wget -O certxray "${airassh3}/certxray.sh"
+wget -O wgetup "${airassh3}/wgetup.sh"
 wget -O xp "${airassh3}/xp.sh"
 
 #Permissions
@@ -138,6 +139,7 @@ chmod +x addss
 chmod +x dellss
 chmod +x rennewss
 chmod +x certxray
+chmod +x wgetup
 chmod +x adddomain
 chmod +x chngedomain
 chmod +x chngeport
