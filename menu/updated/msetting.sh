@@ -30,7 +30,8 @@ echo -e "$BLUE╠➣$NC 1$NC. Change Domain               $BLUE      ║ "
 echo -e "$BLUE╠➣$NC 2$NC. Change Port XRAYS WS/GRPC & HTTP$BLUE  ║ " 
 echo -e "$BLUE╠➣$NC 3$NC. Cek Bandwith Server         $BLUE      ║ " 
 echo -e "$BLUE╠➣$NC 4$NC. Rennew Cert                 $BLUE      ║ " 
-echo -e "$BLUE╠➣$NC 5$NC. Back to Menu                $BLUE      ║ " 
+echo -e "$BLUE╠➣$NC 5$NC. Rennew Wget                 $BLUE      ║ " 
+echo -e "$BLUE╠➣$NC 0$NC. Back to Menu                $BLUE      ║ " 
 echo -e "$BLUE║---------------------------------------║"
 echo -e "$BLUE╚═══════════════════════════════════════╝$NC"  
 read -p "Select From Options [ 1 - 5 ] : " menu
@@ -49,6 +50,9 @@ vnstat
 certxray
 ;;
 5)
+wgetup
+;;
+0)
 clear
 menu
 ;;
