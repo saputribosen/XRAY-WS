@@ -26,6 +26,7 @@ apt remove wget
 
 # Install wget
 apt install wget
+
 clear
 echo -e "Update Wget Selesai..."
 cd
