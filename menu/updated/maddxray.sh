@@ -43,7 +43,7 @@ echo -e "$BLUE  ╠➣$NC                              $BLUE    ╠➣$NC       
 echo -e "$BLUE  ║-----------------------------------║-----------------------------------║"
 echo -e "$BLUE  ╚═══════════════════════════════════╩═══════════════════════════════════╝$NC"
 echo -e "$BLUE  ╔═══════════════════════════════════╦═══════════════════════════════════╗"
-echo -e "$BLUE  ║$ORANGE         ✶ VLESS WS ✶       $BLUE       ║$ORANGE     ✶ SHADOWSOCKS WS ✶             $BLUE║"
+echo -e "$BLUE  ║$ORANGE         ✶ VLESS WS ✶       $BLUE       ║$ORANGE     ✶ SHADOWSOCKS WS ✶            $BLUE║"
 echo -e "$BLUE  ║-----------------------------------║-----------------------------------║"
 echo -e "$BLUE  ╠➣$NC 12. Create Account XRAYS Vless $BLUE  ╠➣$NC 16. Create Account ShadowSocks $BLUE  ║"
 echo -e "$BLUE  ╠➣$NC 13. Delete Account XRAYS Vless $BLUE  ╠➣$NC 17. Delete Account ShadowSocks $BLUE  ║"
