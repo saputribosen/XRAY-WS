@@ -76,7 +76,8 @@ echo "IP=$domain1" >> /var/lib/airavpn/ipvps.conf
 #Bersihkan terminal
 clear
 sleep 1
-
+echo -e "Upgrade ${NC}Please Wait..."
+apt update -y && apt upgrade -y
 #Install Kelengkapan
 apt install curl socat xz-utils wget apt-transport-https gnupg gnupg2 gnupg1 dnsutils lsb-release -y 
 apt install socat cron bash-completion ntpdate -y
