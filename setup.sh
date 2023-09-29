@@ -45,7 +45,8 @@ mkdir /etc/xray;
 echo "IP=" >> /var/lib/crot/ipvps.conf
 echo "IP=" >> /var/lib/airavpn/ipvps.conf
 cd
-#
+# Update dulu
+apt update -y && apt upgrade -y
 # Add Domain / Tambah Domain
 wget https://raw.githubusercontent.com/saputribosen/XRAY-WS/main/updated/adddomain.sh && chmod +x adddomain.sh && ./adddomain.sh
 #
