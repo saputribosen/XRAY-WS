@@ -102,7 +102,7 @@ rm -rf /etc/nginx/conf.d/alone.conf
 mkdir -p /home/vps/public_html
 
 # set Cron
-echo "0 */4 * * * restart-xray" >> /etc/crontab
+echo "0 */4 * * * root xp & restart-xray" >> /etc/crontab
 
 # set uuid
 uuid9=$(cat /proc/sys/kernel/random/uuid)
