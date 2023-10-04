@@ -43,7 +43,8 @@ d2=$(date -d "$now" +%s)
 exp2=$(( (d1 - d2) / 86400 ))
 if [[ "$exp2" = "0" ]]; then
 sed -i "/^### $user $exp/,/^},{/d" /etc/xray/config.json
-rm -f /etc/xray/vmess-$user-tls.json /etc/xray/vmess-$user-nontls.json
+rm -f "/etc/xray/vmess-$user-tls.json" "/etc/xray/vmess-$user-nontls.json" "/etc/xray/vmess-$user-grpc.json"
+rm -f "/usr/bin/vmess/vmess-$user.txt" "/usr/bin/vmess/vmess-$user-ntls.txt" "/usr/bin/vmess/vmess-$user-grpc.txt"
 fi
 done
 # Delete Vless
@@ -57,6 +58,7 @@ d2=$(date -d "$now" +%s)
 exp2=$(( (d1 - d2) / 86400 ))
 if [[ "$exp2" = "0" ]]; then
 sed -i "/^#### $user $exp/,/^},{/d" /etc/xray/config.json
+rm -f /usr/bin/vless/vless-$user.txt
 fi
 done
 # Delete trojan
@@ -71,6 +73,7 @@ d2=$(date -d "$now" +%s)
 exp2=$(( (d1 - d2) / 86400 ))
 if [[ "$exp2" = "0" ]]; then
 sed -i "/^#&# $user $exp/,/^},{/d" /etc/xray/config.json
+rm -f "/usr/bin/trojan/trojan-$user.txt" "/usr/bin/trojan/trojan-$user-grpc.txt"
 fi
 done
 # Delete shadowsocks
@@ -84,6 +87,9 @@ d2=$(date -d "$now" +%s)
 exp2=$(( (d1 - d2) / 86400 ))
 if [[ "$exp2" = "0" ]]; then
 sed -i "/^##&# $user $exp/,/^},{/d" /etc/xray/config.json
+rm -f /home/vps/public_html/ss-ws-${user}.txt
+rm -f /home/vps/public_html/ss-grpc-${user}.txt
+rm -f /usr/bin/shadowsock/ss-$user.txt
 fi
 done
 systemctl restart xray.service
