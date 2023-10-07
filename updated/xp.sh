@@ -33,7 +33,7 @@ fi
 # ====================
 clear
 # Delete vmess expired
-data=$(grep -E "^### " "/etc/xray/config.json" | sort | uniq | cut -d ' ' -f 2)
+data=$(grep -E "^### " "/etc/xray/config.json" | sort | uniq | cut -d ' ' -f 2);
 now=`date +"%Y-%m-%d"`
 for user in "${data[@]}"
 do
