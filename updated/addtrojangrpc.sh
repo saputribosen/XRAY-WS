@@ -44,7 +44,7 @@ until [[ $user =~ ^[a-zA-Z0-9_]+$ && ${user_EXISTS} == '0' ]]; do
 		fi
 	done
 read -p "Expired (Days) : " masaaktif
-sleep 2
+sleep 3
 echo -e "[ ${green}TUNGGU${NC} ] Akun sedang dibuat... "
 uuid=$(cat /proc/sys/kernel/random/uuid)
 hariini=`date -d "0 days" +"%Y-%m-%d"`
