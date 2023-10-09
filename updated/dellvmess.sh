@@ -47,6 +47,8 @@ NUMBER_OF_CLIENTS=$(grep -E "^### " "/etc/xray/config.json" | sort | uniq | cut 
 	done
 user=$(grep -E "^### " "/etc/xray/config.json" | sort | uniq | cut -d ' ' -f 2 | sed -n "${CLIENT_NUMBER}"p)
 exp=$(grep -E "^### " "/etc/xray/config.json" | sort | uniq | cut -d ' ' -f 3 | sed -n "${CLIENT_NUMBER}"p)
+sleep 2
+echo -e "[ ${GREEN}TUNGGU${NC} ] Akun $user sedang dihapuss... "
 sed -i "/^### $user $exp/,/^},{/d" /etc/xray/config.json
 sed -i "/^### $user $exp/,/^},{/d" /etc/xray/config.json
 rm -f "/etc/xray/vmess-$user-tls.json" "/etc/xray/vmess-$user-nontls.json" "/etc/xray/vmess-$user-grpc.json"
