@@ -48,7 +48,7 @@ until [[ $user =~ ^[a-zA-Z0-9_]+$ && ${CLIENT_EXISTS} == '0' ]]; do
 uuid=$(cat /proc/sys/kernel/random/uuid)
 read -p "Expired (Days) : " masaaktif
 sleep 3
-echo -e "[ ${GREEN}TUNGGU${NC} ] Akun sedang dibuat... "
+echo -e "[ ${GREEN}TUNGGU${NC} ] Akun $user sedang dibuat... "
 hariini=`date -d "0 days" +"%Y-%m-%d"`
 exp=`date -d "$masaaktif days" +"%Y-%m-%d"`
 sed -i '/#vmess$/a\### '"$user $exp"'\
