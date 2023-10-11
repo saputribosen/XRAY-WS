@@ -33,30 +33,35 @@ fi
 # ====================
 clear
 # Delete Vmess
-data=( $(cat /etc/xray/config.json | grep '^###' | cut -d ' ' -f 2) );
-now=$(date +"%Y-%m-%d");
-for user in "${data[@]}"; do
- exp=$(grep -w "^### $user" /etc/xray/config.json | cut -d ' ' -f 3 | sort | uniq);
- d1=$(date -d "$exp" +%s);
- d2=$(date -d "$now" +%s);
- exp2=$(( (d1 - d2) / 86400 ));
- if [[ "$exp2" = "0" ]]; then
-  sleep 1
-  sed -i "/^### $user $exp/,/^},{/d" /etc/xray/config.json
-  rm -f "/etc/xray/vmess-$user-tls.json" "/etc/xray/vmess-$user-nontls.json" "/etc/xray/vmess-$user-grpc.json"
-  rm -f "/usr/bin/vmess/vmess-$user.txt" "/usr/bin/vmess/vmess-$user-ntls.txt" "/usr/bin/vmess/vmess-$user-grpc.txt"
- fi
+datavm=($(grep -E "^### " "/etc/xray/config.json" | cut -d ' ' -f 2 | sort | uniq | column -t))
+now=$(date +"%Y-%m-%d")
+for user in "${datavm[@]}"; do
+    expv=$(grep -w "^### $user" "/etc/xray/config.json" | cut -d ' ' -f 3 | sort | uniq)   
+    # Cek apakah tanggal 'expv' valid sebelum mencoba mengonversinya
+    if date -d "$expv" > /dev/null 2>&1; then
+        d1=$(date -d "$expv" +%s)
+    else
+        echo "Tanggal tidak valid untuk user $user: $expv"
+        continue  # Lanjutkan dengan pengguna berikutnya
+    fi
+    d2=$(date -d "$now" +%s)
+    exp1=$(( (d1 - d2) / 86400 ))
+    
+    if [[ "$exp1" -lt 0 ]]; then
+        sed -i "/^### $user $expv/,/^},{/d" "/etc/xray/config.json"
+        rm -f "/etc/xray/vmess-$user-tls.json" "/etc/xray/vmess-$user-nontls.json" "/etc/xray/vmess-$user-grpc.json"
+        rm -f "/usr/bin/vmess/vmess-$user.txt" "/usr/bin/vmess/vmess-$user-ntls.txt" "/usr/bin/vmess/vmess-$user-grpc.txt"
+    fi
 done
 # Delete trojan
-data=( $(cat /etc/xray/config.json | grep '^#&#' | cut -d ' ' -f 2) );
+datatj=( $(cat /etc/xray/config.json | grep '^#&#' | cut -d ' ' -f 2) );
 now=$(date +"%Y-%m-%d");
-for user in "${data[@]}"; do
+for user in "${datatj[@]}"; do
  exp=$(grep -w "^#&# $user" /etc/xray/config.json | cut -d ' ' -f 3 | sort | uniq);
  d1=$(date -d "$exp" +%s);
  d2=$(date -d "$now" +%s);
  exp2=$(( (d1 - d2) / 86400 ));
  if [[ "$exp2" = "0" ]]; then
-  sleep 1
   sed -i "/^#&# $user $exp/,/^},{/d" /etc/xray/config.json
   rm -f "/usr/bin/trojan/trojan-$user.txt" "/usr/bin/trojan/trojan-$user-grpc.txt"
  fi
