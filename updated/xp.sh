@@ -54,14 +54,20 @@ for user in "${datavm[@]}"; do
     fi
 done
 # Delete trojan
-datatj=( $(cat /etc/xray/config.json | grep '^#&#' | cut -d ' ' -f 2) );
+datatj=($(grep -E "^#&# " "/etc/xray/config.json" | cut -d ' ' -f 2 | sort | uniq | column -t))
 now=$(date +"%Y-%m-%d");
 for user in "${datatj[@]}"; do
  exp=$(grep -w "^#&# $user" /etc/xray/config.json | cut -d ' ' -f 3 | sort | uniq);
- d1=$(date -d "$exp" +%s);
- d2=$(date -d "$now" +%s);
- exp2=$(( (d1 - d2) / 86400 ));
- if [[ "$exp2" = "0" ]]; then
+    # Cek apakah tanggal 'expv' valid sebelum mencoba mengonversinya
+    if date -d "$exp" > /dev/null 2>&1; then
+        d1=$(date -d "$exp" +%s)
+    else
+        echo "Tanggal tidak valid untuk user $user: $exp"
+        continue  # Lanjutkan dengan pengguna berikutnya
+    fi
+    d2=$(date -d "$now" +%s)
+    exp2=$(( (d1 - d2) / 86400 ))
+ if [[ "$exp2" -lt 0 ]]; then
   sed -i "/^#&# $user $exp/,/^},{/d" /etc/xray/config.json
   rm -f "/usr/bin/trojan/trojan-$user.txt" "/usr/bin/trojan/trojan-$user-grpc.txt"
  fi
