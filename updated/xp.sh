@@ -58,7 +58,7 @@ datatj=($(grep -E "^#&# " "/etc/xray/config.json" | cut -d ' ' -f 2 | sort | uni
 now=$(date +"%Y-%m-%d");
 for user in "${datatj[@]}"; do
  exp=$(grep -w "^#&# $user" /etc/xray/config.json | cut -d ' ' -f 3 | sort | uniq);
-    # Cek apakah tanggal 'expv' valid sebelum mencoba mengonversinya
+    # Cek apakah tanggal 'exp' valid sebelum mencoba mengonversinya
     if date -d "$exp" > /dev/null 2>&1; then
         d1=$(date -d "$exp" +%s)
     else
