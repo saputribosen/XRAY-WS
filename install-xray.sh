@@ -67,8 +67,8 @@ chronyc sourcestats -v
 chronyc tracking -v
 echo -e "[ ${green}INFO$NC ] Setting dll"
 apt clean all && apt update -y
-apt install curl socat xz-utils wget apt-transport-https gnupg gnupg2 gnupg1 dnsutils lsb-release -y 
-apt install socat cron bash-completion ntpdate -y
+apt install -y curl socat xz-utils wget apt-transport-https gnupg gnupg2 gnupg1 dnsutils lsb-release
+apt install -y socat cron bash-completion ntpdate
 ntpdate pool.ntp.org
 apt -y install chrony
 apt install zip -y
