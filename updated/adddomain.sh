@@ -90,7 +90,7 @@ timedatectl set-timezone Asia/Jakarta
 chronyc sourcestats -v
 chronyc tracking -v
 mkdir -p /etc/xray
-sudo lsof -t -i tcp:80 -s tcp:listen | sudo xargs kill
+lsof -t -i tcp:80 -s tcp:listen | xargs kill
 cd /root/
 curl https://get.acme.sh | sh
 bash acme.sh --install
