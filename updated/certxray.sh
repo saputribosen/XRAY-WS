@@ -37,7 +37,7 @@ rm -f /etc/xray/xray.crt
 rm -f /etc/xray/xray.key
 
 systemctl enable xray.service
-sudo lsof -t -i tcp:80 -s tcp:listen | sudo xargs kill
+lsof -t -i tcp:80 -s tcp:listen | sudo xargs kill
 cd /root/
 curl https://get.acme.sh | sh
 bash acme.sh --install
