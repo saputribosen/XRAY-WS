@@ -48,9 +48,6 @@ start-menu
 5)
 msettings
 ;;
-6)
-mbackup
-;;
 0)
 clear
 exit
