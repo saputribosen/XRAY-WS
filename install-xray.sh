@@ -102,8 +102,8 @@ rm -rf /etc/nginx/conf.d/alone.conf
 mkdir -p /home/vps/public_html
 
 # set Cron
-echo "0 */2 * * * restart-xray" >> /etc/crontab
-echo "59 23 * * * xp" >> /etc/crontab
+echo "0 */3 * * * root restart-xray" >> /etc/crontab
+echo "59 23 * * * root xp" >> /etc/crontab
 
 # set uuid
 uuid9=$(cat /proc/sys/kernel/random/uuid)
@@ -507,14 +507,14 @@ sed -i '$ i}' /etc/nginx/conf.d/xray.conf
 
 
 sleep 1
-echo -e "[ ${green}INFO$NC ] Installing bbr.."
+#echo -e "[ ${green}INFO$NC ] Installing bbr.."
 #wget -q -O /usr/bin/bbr "https://raw.githubusercontent.com/apih46/mini/main/dll/bbr.sh"
 #chmod +x /usr/bin/bbr
 #bbr >/dev/null 2>&1
 #rm /usr/bin/bbr >/dev/null 2>&1
 echo -e "$yell[SERVICE]$NC Restart All service"
 systemctl daemon-reload
-sleep 1
+sleep 2
 echo -e "[ ${green}ok${NC} ] Enable & restart xray "
 systemctl enable xray
 systemctl restart xray
@@ -548,5 +548,5 @@ rm -rf /root/vnstat-2.6
 
 #done
 clear
-#rm -f ins-xray.sh
+rm -f ins-xray.sh
 rm -f install-xray.sh
