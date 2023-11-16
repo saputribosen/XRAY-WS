@@ -75,6 +75,7 @@ apt install zip -y
 apt install curl pwgen openssl netcat cron -y
 
 #install dos deflate
+echo -e "[ ${green}INFO$NC ] Downloading & Installing Anti DDOS"
 sleep 1
 wget http://www.inetbase.com/scripts/ddos/install.sh
 chmod 777 install.sh
