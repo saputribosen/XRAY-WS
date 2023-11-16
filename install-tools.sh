@@ -134,8 +134,17 @@ apt-get --reinstall --fix-missing install -y bzip2 gzip coreutils wget screen rs
 echo "clear" >> .profile
 echo "neofetch" >> .profile
 
+#install nginx
+wget http://nginx.org/download/nginx-1.21.4.tar.gz
+tar -xzvf nginx-1.21.4.tar.gz
+cd nginx-1.21.4
+./configure
+sleep 1
+make
+make install
+
 # install webserver
-apt -y install nginx php php-fpm php-cli php-mysql libxml-parser-perl
+apt -y install php php-fpm php-cli php-mysql libxml-parser-perl
 rm /etc/nginx/sites-enabled/default
 rm /etc/nginx/sites-available/default
 curl https://${airassh}/nginx.conf > /etc/nginx/nginx.conf
