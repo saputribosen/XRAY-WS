@@ -76,6 +76,7 @@ chmod +x /etc/rc.local
 systemctl enable rc-local
 systemctl start rc-local.service
 #
+sleep 1
 # set time GMT +7
 ln -fs /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
 
@@ -85,6 +86,7 @@ sed -i 's/AcceptEnv/#AcceptEnv/g' /etc/ssh/sshd_config
 #alat
 apt install -y libnss3-dev libnspr4-dev pkg-config libpam0g-dev libcap-ng-dev libcap-ng-utils libselinux1-dev libcurl4-nss-dev flex bison make libnss3-tools libevent-dev xl2tpd pptpd
 
+sleep 1
 #update
 apt update -y
 apt upgrade -y
@@ -133,15 +135,6 @@ apt install dos2unix -y
 apt-get --reinstall --fix-missing install -y bzip2 gzip coreutils wget screen rsyslog iftop htop net-tools zip unzip wget net-tools curl nano sed screen gnupg gnupg1 bc apt-transport-https build-essential dirmngr libxml-parser-perl neofetch git lsof
 echo "clear" >> .profile
 echo "neofetch" >> .profile
-
-#install nginx
-wget http://nginx.org/download/nginx-1.21.4.tar.gz
-tar -xzvf nginx-1.21.4.tar.gz
-cd nginx-1.21.4
-./configure
-sleep 1
-make
-make install
 
 # install webserver
 apt -y install php php-fpm php-cli php-mysql libxml-parser-perl
