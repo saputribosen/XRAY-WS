@@ -14,8 +14,8 @@ unique_admins=$(awk '/email:/{print $NF}' "$log_file" | sort -u)
 
 # Display the results
 for admin_email in $unique_admins; do
-    echo -e "${NC}${GREEN}User: $admin_email ${NC}"
-    echo "-----------------------------------"
+    echo -e "${NC}User: ${GREEN} $admin_email ${NC}"
+    echo "---------------------"
     grep -w "email: $admin_email" "$log_file" | grep "accepted" | awk '{split($3, a, ":"); print a[1]}' | sort -u
     echo
 done
