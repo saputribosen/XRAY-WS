@@ -75,44 +75,12 @@ apt install zip -y
 apt install curl pwgen openssl netcat cron -y
 
 #install dos deflate
-echo -e "[ ${green}INFO$NC ] Downloading & Installing Anti DDOS"
-sleep 1
-wget http://www.inetbase.com/scripts/ddos/install.sh
-chmod 777 install.sh
-./install.sh
-rm -f install.sh
-cat > /usr/local/ddos/ddos.conf <<EOF
-##### Paths of the script and other files
-PROGDIR="/usr/local/ddos"
-PROG="/usr/local/ddos/ddos.sh"
-IGNORE_IP_LIST="/usr/local/ddos/ignore.ip.list"
-CRON="/etc/cron.d/ddos.cron"
-APF="/etc/apf/apf"
-IPT="/sbin/iptables"
-
-##### frequency in minutes for running the script
-##### Caution: Every time this setting is changed, run the script with --cron
-##### option so that the new frequency takes effect
-FREQ=1
-
-##### How many connections define a bad IP? Indicate that below.
-NO_OF_CONNECTIONS=150
-
-##### APF_BAN=1 (Make sure your APF version is atleast 0.96)
-##### APF_BAN=0 (Uses iptables for banning ips instead of APF)
-APF_BAN=1
- 
-##### KILL=0 (Bad IPs are'nt banned, good for interactive execution of script)
-##### KILL=1 (Recommended setting)
-KILL=1
- 
-##### An email is sent to the following address when an IP is banned.
-##### Blank would suppress sending of mails
-EMAIL_TO="root"
- 
-##### Number of seconds the banned ip should remain in blacklist.
-BAN_PERIOD=3600
-EOF
+#echo -e "[ ${green}INFO$NC ] Downloading & Installing Anti DDOS"
+#sleep 1
+#wget http://www.inetbase.com/scripts/ddos/install.sh
+#chmod 777 install.sh
+#./install.sh
+#rm -f install.sh
 
 # install xray
 sleep 1
@@ -129,7 +97,7 @@ touch /var/log/xray/error.log
 touch /var/log/xray/access2.log
 touch /var/log/xray/error2.log
 # / / Ambil Xray Core Version Terbaru
-bash -c "$(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release.sh)" @ install -u www-data --version 1.5.6
+bash -c "$(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release.sh)" @ install -u www-data --version 1.8.4
 
 ## crt xray
 systemctl stop nginx
