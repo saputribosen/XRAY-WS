@@ -77,8 +77,8 @@ clear
 	rm -rf install-tools.sh
 	rm -rf adddomain.sh
 	rm -rf set-br.sh
-	echo " Reboot 10 Sec"
-	sleep 10
+	echo " Reboot 5 Sec"
+	sleep 5
 	reboot
 else
 	clear
@@ -120,8 +120,8 @@ else
 	echo "   - Full Orders For Various Services" | tee -a log-install.txt
 	echo "   - White Label" | tee -a log-install.txt
 	echo "   - Installation Log --> /root/log-install.txt"  | tee -a log-install.txt
-	echo " Reboot 10 Sec"
-	sleep 10
+	echo " Reboot 5 Sec"
+	sleep 5
 	cd
 	rm -rf updatedll
 	rm -rf updatedll.sh
