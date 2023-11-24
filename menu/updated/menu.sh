@@ -24,7 +24,8 @@ echo -e "$BLUE╠➣$NC 1$NC. XRAY WS/GRPC                $BLUE      ║ "
 echo -e "$BLUE╠➣$NC 2$NC. Restart Services            $BLUE      ║ "
 echo -e "$BLUE╠➣$NC 3$NC. List Port Used              $BLUE      ║ "
 echo -e "$BLUE╠➣$NC 4$NC. Cek Service                 $BLUE      ║ "
-echo -e "$BLUE╠➣$NC 5$NC. Settings                    $BLUE      ║ "
+echo -e "$BLUE╠➣$NC 5$NC. Cek User Login              $BLUE      ║ "
+echo -e "$BLUE╠➣$NC 6$NC. Settings                    $BLUE      ║ "
 echo -e "$BLUE╠➣$NC 0$NC. Exit                        $BLUE      ║ "
 echo -e "$BLUE║---------------------------------------║"
 echo -e "$BLUE╠➣$NC Menu by ARYO                         $BLUE║"
@@ -46,6 +47,9 @@ cek-port
 start-menu
 ;;
 5)
+akses
+;;
+6)
 msettings
 ;;
 0)
