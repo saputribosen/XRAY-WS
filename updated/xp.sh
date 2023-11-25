@@ -32,6 +32,7 @@ fi
 # shadowsocks = ##&#
 # ====================
 clear
+systemctl restart xray
 # Delete Vmess
 datavm=($(grep -E "^### " "/etc/xray/config.json" | cut -d ' ' -f 2 | sort | uniq | column -t))
 now=$(date +"%Y-%m-%d")
@@ -53,6 +54,7 @@ for user in "${datavm[@]}"; do
         rm -f "/usr/bin/vmess/vmess-$user.txt" "/usr/bin/vmess/vmess-$user-ntls.txt" "/usr/bin/vmess/vmess-$user-grpc.txt"
     fi
 done
+sleep 1
 # Delete trojan
 datatj=($(grep -E "^#&# " "/etc/xray/config.json" | cut -d ' ' -f 2 | sort | uniq | column -t))
 now=$(date +"%Y-%m-%d");
@@ -72,6 +74,7 @@ for user in "${datatj[@]}"; do
   rm -f "/usr/bin/trojan/trojan-$user.txt" "/usr/bin/trojan/trojan-$user-grpc.txt"
  fi
 done
+sleep 1
 # Delete Vless
 data=( $(cat /etc/xray/config.json | grep '^####' | cut -d ' ' -f 2) );
 now=$(date +"%Y-%m-%d");
@@ -86,6 +89,7 @@ for user in "${data[@]}"; do
    rm -f /usr/bin/vless/vless-$user.txt
  fi
 done
+sleep 1
 # Delete shadowsocks
 data=( $(cat /etc/xray/config.json | grep '^##&#' | cut -d ' ' -f 2) );
 now=$(date +"%Y-%m-%d");
@@ -102,4 +106,5 @@ for user in "${data[@]}"; do
   rm -f /usr/bin/shadowsock/ss-$user.txt
  fi
 done
-restart-xray
+sleep 1
+systemctl restart xray
