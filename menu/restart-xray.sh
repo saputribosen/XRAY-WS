@@ -16,9 +16,12 @@ Error="${RED}[Mistake]${NC}"
 clear
 echo -e "${OK}Please Wait..."
 systemctl daemon-reload
+sleep 1
 systemctl enable xray
+sleep 1
 systemctl restart xray
 systemctl restart nginx
+sleep 1
 systemctl enable runn
 systemctl restart runn
 clear
