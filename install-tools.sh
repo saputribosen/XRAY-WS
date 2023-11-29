@@ -30,7 +30,7 @@ if [[ "$IP" = "" ]]; then
 else
     clear
     echo -e "${success}Installasi Tolls..."
-    sleep2
+    sleep 2
 fi
 # Edit file /etc/systemd/system/rc-local.service
 cat > /etc/systemd/system/rc-local.service <<-END
