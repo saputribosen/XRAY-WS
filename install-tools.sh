@@ -22,16 +22,17 @@ error1="${RED} [ERROR] ${NC}"
 success="${GREEN} [OK] ${NC}"
 # Cek Domain
 source /var/lib/airavpn/ipvps.conf
-if [[ "$IP" = "" ]]; then
-    clear
-    echo -e " ${error1}Gagal Install-tools.."
-    sleep 2
-    exit 0
-else
-    clear
-    echo -e "${success}Installasi Tolls..."
-    sleep 2
-fi
+#if [[ "$IP" = "" ]]; then
+#    clear
+#    echo -e " ${error1}Gagal Install-tools.."
+#    sleep 2
+#    exit 0
+#else
+#    clear
+#    echo -e "${success}Installasi Tolls..."
+#    sleep 2
+#fi
+
 # Edit file /etc/systemd/system/rc-local.service
 cat > /etc/systemd/system/rc-local.service <<-END
 [Unit]
