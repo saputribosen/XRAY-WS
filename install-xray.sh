@@ -75,12 +75,7 @@ apt install zip -y
 apt install curl pwgen openssl netcat cron -y
 
 #install dos deflate
-#echo -e "[ ${green}INFO$NC ] Downloading & Installing Anti DDOS"
-#sleep 1
-#wget http://www.inetbase.com/scripts/ddos/install.sh
-#chmod 777 install.sh
-#./install.sh
-#rm -f install.sh
+
 
 # install xray
 sleep 1
@@ -98,8 +93,6 @@ touch /var/log/xray/access2.log
 touch /var/log/xray/error2.log
 # / / Ambil Xray Core Version Terbaru
 bash -c "$(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release.sh)" @ install -u www-data --version 1.5.6
-
-## crt xray
 
 ## crt xray
 systemctl stop nginx
