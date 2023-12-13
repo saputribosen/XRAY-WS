@@ -54,7 +54,7 @@ sed -i '/#trojanws$/a\#&# '"$user $exp"'\
 
 systemctl restart xray.service
 #buattrojan
-trojanlinkws="trojan://${uuid}@${domain}:443?path=/aryo&security=tls&host=${domain}&type=ws&sni=${domain}#${user}"
+trojanlinkws="trojan://${uuid}@${domain}:443?path=/trojan&security=tls&host=${domain}&type=ws&sni=${domain}#${user}"
 service cron restart
 #tampil log.txt
 cd /usr/bin/trojan
@@ -68,7 +68,7 @@ echo -e "Host     : ${domain}" | tee -a trojan-${user}.txt
 echo -e "Port     : ${tr}" | tee -a trojan-${user}.txt
 echo -e "Password : ${uuid}" | tee -a trojan-${user}.txt
 echo -e "Network  : ws" | tee -a trojan-${user}.txt
-echo -e "Path     : /aryo" | tee -a trojan-${user}.txt
+echo -e "Path     : /trojan" | tee -a trojan-${user}.txt
 echo -e "Created  : $hariini" | tee -a trojan-${user}.txt
 echo -e "Expired  : $exp" | tee -a trojan-${user}.txt
 echo -e "==========================" | tee -a trojan-${user}.txt
