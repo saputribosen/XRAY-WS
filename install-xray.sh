@@ -171,7 +171,7 @@ cat > /etc/xray/config.json << END
        "streamSettings":{
          "network": "ws",
             "wsSettings": {
-                "path": "/vmaryo"
+                "path": "/vmess"
           }
         }
      },
@@ -191,7 +191,7 @@ cat > /etc/xray/config.json << END
        "streamSettings":{
            "network": "ws",
            "wsSettings": {
-               "path": "/aryo"
+               "path": "/trojan"
             }
          }
      },
