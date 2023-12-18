@@ -63,7 +63,7 @@ cat>/etc/xray/vmess-$user-grpc.json<<EOF
       "net": "grpc",
       "path": "vmess-grpc",
       "type": "gun",
-      "host": "",
+      "host": "${domain}",
       "tls": "tls"
 }
 EOF
