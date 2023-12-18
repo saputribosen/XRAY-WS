@@ -64,7 +64,7 @@ cat>/etc/xray/vmess-$user-tls.json<<EOF
       "net": "ws",
       "path": "/vmess",
       "type": "none",
-      "host": "hostdomain",
+      "host": "${domain}",
       "tls": "tls"
 }
 EOF
