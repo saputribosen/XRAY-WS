@@ -60,21 +60,16 @@ fi
 systemctl restart xray.service
 echo " "
 echo -e ""
-echo -e "$BLUE╔═══════════════════════════════════════$BLUE╗"
-echo -e "$BLUE╠➣$NC 0$NC. Back to Menu Xray           $BLUE      ║ "
-echo -e "$BLUE║---------------------------------------║"
-echo -e "$BLUE╠➣$NC Script Menu by ARYO                  $BLUE║"
-echo -e "$BLUE╠➣$NC Telegram https://t.me/Opindoo        $BLUE║"
-echo -e "$BLUE╚═══════════════════════════════════════╝$NC"  
-read -p " ➣ Select From Options [ 0 ]:  " menu
+read -p " ➣ Select [ 0 BACK | Enter To Menu ]:  " menu
 echo -e ""
+
 case $menu in
 0)
-maddxray
+viewtrojan
 ;;
-*)
-clear
-bash menu
-;;
+  *)
+    clear
+    bash menu
+    ;;
 esac
 #
