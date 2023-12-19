@@ -82,7 +82,6 @@ read -p " ➣ Select [ 0 BACK | Enter To Menu ]:  " menu
 echo -e ""
 
 case $menu in
-
 ;;
   *)
     clear
