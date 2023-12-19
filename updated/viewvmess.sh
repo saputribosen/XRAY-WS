@@ -62,6 +62,7 @@ echo " "
 echo -e ""
 echo -e ""
 read -sp " Press ENTER to go back"
+clear
 echo " "
 *)
 clear
