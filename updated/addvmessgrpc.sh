@@ -95,3 +95,13 @@ echo -e "Link GRPC   : ${xrayv2ray3}" | tee -a vmess-${user}-grpc.txt
 echo -e "=========================" | tee -a vmess-${user}-grpc.txt
 echo -e "Terimakasih ${user}" | tee -a vmess-${user}-grpc.txt
 echo -e "" | tee -a vmess-${user}-grpc.txt
+read -p " ➣ Press Enter To Menu  " menu
+echo -e ""
+
+case $menu in
+  *)
+    clear
+    bash menu
+    ;;
+esac
+#
