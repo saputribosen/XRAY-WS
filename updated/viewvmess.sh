@@ -61,7 +61,7 @@ systemctl restart xray.service
 echo " "
 echo -e ""
 echo -e ""
-read -p "Press Enter to go back to the menu: " menu
+read -p " ➣ Select [ 0 BACK | Enter To Menu ]:  " menu
 echo -e ""
 
 case $menu in
