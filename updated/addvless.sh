@@ -82,3 +82,13 @@ echo -e "=========================" | tee -a vless-${user}.txt
 echo -e "Link GRPC   : ${xrayvless3}" | tee -a vless-${user}.txt
 echo -e "=========================" | tee -a vless-${user}.txt
 echo "Terimakasih ${user}" | tee -a vless-${user}.txt
+read -p " ➣ Press Enter To Menu  " menu
+echo -e ""
+
+case $menu in
+  *)
+    clear
+    bash menu
+    ;;
+esac
+#
