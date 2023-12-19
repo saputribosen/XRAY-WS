@@ -65,6 +65,9 @@ read -p "Press Enter to go back to the menu: " menu
 echo -e ""
 
 case $menu in
+0)
+viewvmess
+;;
   *)
     clear
     bash menu
