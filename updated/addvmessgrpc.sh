@@ -76,7 +76,6 @@ systemctl restart xray
 service cron restart
 cd /usr/bin/vmess
 clear
-echo -e "" | tee -a vmess-${user}-grpc.txt
 echo -e "======-VMESS-GRPC-======" | tee -a vmess-${user}-grpc.txt
 echo -e "ISP         : ${MYAD}" | tee -a vmess-${user}-grpc.txt
 echo -e "Region      : ${MYREG}" | tee -a vmess-${user}-grpc.txt
