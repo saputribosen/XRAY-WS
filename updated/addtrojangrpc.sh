@@ -76,3 +76,13 @@ echo -e "Link trojan gRPC  : ${trojanlinkgrpc}" | tee -a trojan-${user}.txt
 echo -e "==========================" | tee -a trojan-${user}-grpc.txt
 echo -e "Terimakasih ${user}" | tee -a trojan-${user}-grpc.txt
 echo -e "" | tee -a trojan-${user}-grpc.txt
+read -p " ➣ Press Enter To Menu  " menu
+echo -e ""
+
+case $menu in
+  *)
+    clear
+    bash menu
+    ;;
+esac
+#
