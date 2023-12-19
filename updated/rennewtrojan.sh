@@ -80,4 +80,18 @@ echo "==============================="
 echo "Username  : $user"
 echo "Expired   : $exp4"
 echo "==============================="
-echo "Script By ARYO"
+echo " "
+read -p " ➣ Select 0 BACK Renew | Enter To Menu :  " menu
+echo -e ""
+
+case $menu in
+0)
+rennewtrojan
+;;
+  *)
+    clear
+    bash menu
+    ;;
+esac
+#
+
