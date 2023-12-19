@@ -61,3 +61,17 @@ echo "Username  : $user"
 echo "Expired   : $exp"
 echo "==============================="
 echo "Scipt By ARYO"
+echo " "
+read -p " ➣ Select [ 0 BACK Account | Enter To Menu ]:  " menu
+echo -e ""
+
+case $menu in
+0)
+delltrojan
+;;
+  *)
+    clear
+    bash menu
+    ;;
+esac
+#
