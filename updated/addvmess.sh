@@ -96,3 +96,4 @@ echo -e "Link TLS    : ${xrayv2ray1}" | tee -a vmess-${user}.txt
 echo -e "=========================" | tee -a vmess-${user}.txt
 echo -e "Terimakasih ${user}" | tee -a vmess-${user}.txt
 echo -e "" | tee -a vmess-${user}.txt
+read -sp " Press ENTER to go back"
