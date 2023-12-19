@@ -78,4 +78,15 @@ echo -e "Terimakasih ${user}" | tee -a trojan-${user}.txt
 echo -e ""
 echo -e "\033[0;32m     [*][*][*]======================================[*][*][*]"
 echo ""
-read -sp " Press ENTER to go back"
+read -p " ➣ Select [ 0 BACK | Enter To Menu ]:  " menu
+echo -e ""
+
+case $menu in
+
+;;
+  *)
+    clear
+    bash menu
+    ;;
+esac
+#
