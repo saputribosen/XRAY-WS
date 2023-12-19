@@ -13,6 +13,7 @@ LIGHT='\033[0;37m'
 # ==========================================
 # Getting
 MYIP=$(wget -qO- ipinfo.io/ip);
+domain=$(cat /etc/xray/domain)
 echo "Checking VPS"
 IZIN=$( curl https://raw.githubusercontent.com/saputribosen/scriptfree/main/ipvps.txt | grep $MYIP )
 if [ $MYIP = $MYIP ]; then
