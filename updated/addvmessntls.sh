@@ -75,8 +75,6 @@ systemctl restart xray
 service cron restart
 cd /usr/bin/vmess
 clear
-echo -e "" | tee -a vmess-${user}-ntls.txt
-echo -e "" | tee -a vmess-${user}-ntls.txt
 echo -e "======-VMESS-WS-Ntls-======" | tee -a vmess-${user}-ntls.txt
 echo -e "ISP         : ${MYAD}" | tee -a vmess-${user}-ntls.txt
 echo -e "Region      : ${MYREG}" | tee -a vmess-${user}-ntls.txt
