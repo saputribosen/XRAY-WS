@@ -61,12 +61,13 @@ systemctl restart xray.service
 echo " "
 echo -e ""
 echo -e ""
-read -p " Press Enter go Back  " menu
+read -p "Press Enter to go back to the menu: " menu
 echo -e ""
+
 case $menu in
-*)
-clear
-bash menu
-;;
+  *)
+    clear
+    bash menu
+    ;;
 esac
 #
