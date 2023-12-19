@@ -78,7 +78,7 @@ echo -e "Terimakasih ${user}" | tee -a trojan-${user}.txt
 echo -e ""
 echo -e "\033[0;32m     [*][*][*]======================================[*][*][*]"
 echo ""
-read -p " ➣ Select [ 0 BACK | Enter To Menu ]:  " menu
+read -p " ➣ Press Enter To Menu :  " menu
 echo -e ""
 
 case $menu in
