@@ -7,7 +7,7 @@ BLUE='\033[0;34m'
 PURPLE='\033[0;35m'
 CYAN='\033[0;36m'
 LIGHT='\033[0;37m'
-
+clear
 # Path to the log file
 log_file="/var/log/xray/access.log"
 unique_admins=$(awk '/email:/{print $NF}' "$log_file" | sort -u)
