@@ -62,4 +62,10 @@ echo " "
 echo -e ""
 echo -e ""
 read -sp " Press ENTER to go back"
+echo " "
+*)
+clear
+bash menu
+;;
+esac
 #
