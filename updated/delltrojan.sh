@@ -27,7 +27,7 @@ clear
 NUMBER_OF_CLIENTS=$(grep -E "^#&# " "/etc/xray/config.json" | sort | uniq | cut -d ' ' -f 2 | wc -l)
 	if [[ ${NUMBER_OF_CLIENTS} == '0' ]]; then
 		echo ""
-		echo "You have no existing clients!"
+		echo "You have no existing user!"
 		exit 1
 	fi
 
