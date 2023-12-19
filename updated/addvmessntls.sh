@@ -95,3 +95,4 @@ echo -e "Link Non TLS    : ${xrayv2ray2}" | tee -a vmess-${user}-ntls.txt
 echo -e "=========================" | tee -a vmess-${user}-ntls.txt
 echo -e "Terimakasih ${user}" | tee -a vmess-${user}-ntls.txt
 echo -e "" | tee -a vmess-${user}-ntls.txt
+read -sp " Press ENTER to go back"
