@@ -59,7 +59,6 @@ service cron restart
 #tampil log.txt
 cd /usr/bin/trojan
 clear
-echo -e "" | tee -a trojan-${user}-grpc.txt
 echo -e "======-TROJAN-GRPC======" | tee -a trojan-${user}-grpc.txt
 echo -e "ISP        : ${MYAD}" | tee -a trojan-${user}-grpc.txt
 echo -e "Region     : ${MYREG}" | tee -a trojan-${user}-grpc.txt
