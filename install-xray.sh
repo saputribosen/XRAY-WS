@@ -48,7 +48,7 @@ sleep 1
 mkdir -p /etc/xray 
 sleep 1
 echo -e "[ ${green}INFO${NC} ] Checking... "
-apt update -y && apt install iptables iptables-persistent -y
+apt install iptables iptables-persistent -y
 sleep 1
 echo -e "[ ${green}INFO$NC ] Setting ntpdate"
 ntpdate pool.ntp.org
