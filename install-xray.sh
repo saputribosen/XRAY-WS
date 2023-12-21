@@ -47,7 +47,7 @@ domain=$(cat /root/domain)
 sleep 1
 mkdir -p /etc/xray 
 echo -e "[ ${green}INFO${NC} ] Checking... "
-apt install iptables iptables-persistent -y
+apt update && install iptables iptables-persistent -y
 sleep 1
 echo -e "[ ${green}INFO$NC ] Setting ntpdate"
 ntpdate pool.ntp.org 
