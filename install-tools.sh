@@ -66,8 +66,6 @@ systemctl enable runn
 systemctl restart runn
 iptables -I INPUT -p udp --dport 5300 -j ACCEPT
 iptables -t nat -I PREROUTING -p udp --dport 53 -j REDIRECT --to-ports 5300
-iptables -A INPUT -p tcp --dport 80 -m state --state NEW -m limit --limit 250/second --limit-burst 300 -j ACCEPT
-iptables -A INPUT -m state --state RELATED,ESTABLISHED -m limit --limit 250/second --limit-burst 250 -j ACCEPT
 echo 1 > /proc/sys/net/ipv6/conf/all/disable_ipv6
 exit 0
 END
