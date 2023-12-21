@@ -63,7 +63,6 @@ echo -e ""
 echo -e ""
 read -p " ➣ Select [ 0 BACK | Enter To Menu ]:  " menu
 echo -e ""
-
 case $menu in
 0)
 viewvmess
