@@ -46,11 +46,13 @@ sleep 3
 domain=$(cat /root/domain)
 sleep 1
 mkdir -p /etc/xray 
+sleep 1
 echo -e "[ ${green}INFO${NC} ] Checking... "
 apt install iptables iptables-persistent -y
 sleep 1
 echo -e "[ ${green}INFO$NC ] Setting ntpdate"
-ntpdate pool.ntp.org 
+ntpdate pool.ntp.org
+sleep 1
 timedatectl set-ntp true
 sleep 1
 echo -e "[ ${green}INFO$NC ] Enable chronyd"
@@ -67,8 +69,11 @@ chronyc sourcestats -v
 chronyc tracking -v
 echo -e "[ ${green}INFO$NC ] Setting dll"
 apt clean all && apt update -y
+sleep 1
 apt install -y curl socat xz-utils wget apt-transport-https gnupg gnupg2 gnupg1 dnsutils lsb-release
+sleep 1
 apt install -y socat cron bash-completion ntpdate
+sleep 1
 ntpdate pool.ntp.org
 apt -y install chrony
 apt install zip -y
