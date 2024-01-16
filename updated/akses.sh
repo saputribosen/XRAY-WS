@@ -12,10 +12,16 @@ clear
 log_file="/var/log/xray/access.log"
 unique_admins=$(awk '/email:/{print $NF}' "$log_file" | sort -u)
 
-# Display the results
+# Kecualikan Tes ping
+excluded_domains="www\.gstatic\.com:80\|bing\.com:80\|cp\.cloudflare\.com:80\|ping\.xmbb\.net:80"
+
+# Display
 for admin_email in $unique_admins; do
-    echo -e "${NC}User: ${GREEN} $admin_email ${NC}"
-    echo "---------------------"
-    grep -w "email: $admin_email" "$log_file" | grep "accepted" | awk '{split($3, a, ":"); print a[1]}' | sort -u
-    echo
+    # Pengecekan apakah ada hasil yang sesuai
+    if grep -w "email: $admin_email" "$log_file" | grep "accepted" | grep -v "$excluded_domains" > /dev/null; then
+        echo -e "${NC}User: ${GREEN} $admin_email ${NC}"
+        echo "---------------------"
+        grep -w "email: $admin_email" "$log_file" | grep "accepted" | grep -v "$excluded_domains" | awk '{split($3, a, ":"); if($3 ~ /tcp/) print a[2]; else print a[1]}' | sort -u
+        echo
+    fi
 done
