@@ -20,18 +20,16 @@ excluded_domains="www\.gstatic\.com:80\|bing\.com:80\|cp\.cloudflare\.com:80\|pi
 for admin_email in $unique_admins; do
     # Cek apakah ada hasil yang sesuai
     if grep -w "email: $admin_email" "$log_file" | grep "accepted" | grep -v "$excluded_domains" > /dev/null; then
-        echo -e "${NC}Username: ${GREEN} $admin_email ${NC}"
-        echo "---------------------"
-        
+    
         # Hitung jumlah alamat IP unik
         ip_count=$(grep -w "email: $admin_email" "$log_file" | grep "accepted" | grep -v "$excluded_domains" | awk '{split($3, a, ":"); if($3 ~ /tcp/) print a[2]; else print a[1]}' | sort -u | wc -l)
         
         # Tampilkan dan perbarui config.json jika jumlah IP lebih dari 5
-        if [ "$ip_count" -gt 1 ]; then
+        if [ "$ip_count" -gt 5 ]; then
             sed -i "/\"email\": \"$admin_email\"/ s/\(},\)/#},/" "$config_file" 
         fi    
 
     fi
-sleep 1
-restart-xray
+clear
+systemctl restart xray
 done
