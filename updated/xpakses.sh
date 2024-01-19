@@ -42,4 +42,5 @@ sleep 1
 sed -i '/^#&# /,/},{/ s/#},/},/' "/etc/xray/config.json"
 sleep 1
 systemctl restart xray
+clear
 echo -e "${NC}${GREEN}Unsuspend Berhasil...${NC}"
