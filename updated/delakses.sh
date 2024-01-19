@@ -20,7 +20,7 @@ excluded_domains="www\.gstatic\.com:80\|bing\.com:80\|cp\.cloudflare\.com:80\|pi
 for admin_email in $unique_admins; do
     # Cek apakah ada hasil yang sesuai
     if grep -w "email: $admin_email" "$log_file" | grep "accepted" | grep -v "$excluded_domains" > /dev/null; then
-        echo -e "${NC}Pengguna: ${GREEN} $admin_email ${NC}"
+        echo -e "${NC}Username: ${GREEN} $admin_email ${NC}"
         echo "---------------------"
         
         # Hitung jumlah alamat IP unik
