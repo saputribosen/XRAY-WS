@@ -9,20 +9,26 @@ CYAN='\033[0;36m'
 LIGHT='\033[0;37m'
 clear
 # Path to the log file
-aktif="/var/log/xray/access.log"
-akun="/etc/xray/config.json"
-ademin=$(awk '/email:/{print $NF}' "$aktif" | sort -u)
+log_file="/var/log/xray/access.log"
+config_file="/etc/xray/config.json"
+unique_admins=$(awk '/email:/{print $NF}' "$log_file" | sort -u)
 
 # Kecualikan Tes ping
-domainx="www\.gstatic\.com:80\|bing\.com:80\|cp\.cloudflare\.com:80\|ping\.xmbb\.net:80"
+excluded_domains="www\.gstatic\.com:80\|bing\.com:80\|cp\.cloudflare\.com:80\|ping\.xmbb\.net:80"
 
 # Tampilkan
-for emailuser in $ademin; do
+for admin_email in $unique_admins; do
     # Cek apakah ada hasil yang sesuai
-    if grep -w "email: $emailuser" "$aktif" | grep "accepted" | grep -v "$domainx" > /dev/null; then
-        jml_ip=$(grep -w "email: $emailuser" "$log_file" | grep "accepted" | grep -v "$domainx" | awk '{split($3, a, ":"); if($3 ~ /tcp/) print a[2]; else print a[1]}' | sort -u | wc -l)
-        if [ "$jml_ip" -gt 5 ]; then
-            sed -i "/\"email\": \"$emailuser\"/ s/\(},\)/#},/" "$akun"	
+    if grep -w "email: $admin_email" "$log_file" | grep "accepted" | grep -v "$excluded_domains" > /dev/null; then
+        echo -e "${NC}Pengguna: ${GREEN} $admin_email ${NC}"
+        echo "---------------------"
+        
+        # Hitung jumlah alamat IP unik
+        ip_count=$(grep -w "email: $admin_email" "$log_file" | grep "accepted" | grep -v "$excluded_domains" | awk '{split($3, a, ":"); if($3 ~ /tcp/) print a[2]; else print a[1]}' | sort -u | wc -l)
+        
+        # Tampilkan dan perbarui config.json jika jumlah IP lebih dari 5
+        if [ "$ip_count" -gt 1 ]; then
+            sed -i "/\"email\": \"$admin_email\"/ s/\(},\)/#},/" "$config_file" 
         fi    
 
     fi
