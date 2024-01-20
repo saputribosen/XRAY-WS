@@ -34,7 +34,8 @@ for admin_email in $unique_admins; do
         fi    
 
     fi
-sleep 1
-systemctl restart xray
-clear
 done
+clear
+sleep 1
+truncate -s 0 "$log_file"
+systemctl restart xray
