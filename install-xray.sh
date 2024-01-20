@@ -108,9 +108,12 @@ rm -rf /etc/nginx/conf.d/alone.conf
 mkdir -p /home/vps/public_html
 
 # set Cron
-echo "0 * * * * /usr/bin/restart-xray" >> /etc/crontab
+echo "59 */4 * * * /usr/bin/restart-xray" >> /etc/crontab
 echo "57 23 * * * /usr/bin/xp" >> /etc/crontab
+echo "*/1 * * * * /usr/bin/delakses" >> /etc/crontab
+echo "0 0 * * * /usr/bin/xpakses" >> /etc/crontab
 #echo "57 23 * * * reboot" >> /etc/crontab
+systemctl restart cron
 
 # set uuid
 uuid9=$(cat /proc/sys/kernel/random/uuid)
