@@ -27,11 +27,12 @@ for admin_email in $unique_admins; do
         ip_count=$(grep -w "email: $admin_email" "$log_file" | grep "accepted" | grep -v "$excluded_domains" | awk '{split($3, a, ":"); if($3 ~ /tcp/) print a[2]; else print a[1]}' | sort -u | wc -l)
         
         # Tampilkan dan perbarui config.json jika jumlah IP lebih dari 5
-        if [ "$ip_count" -gt 5 ]; then
+        if [ "$ip_count" -gt 4 ]; then
             sed -i "/\"email\": \"$admin_email\"/ s/\(},\)/#},/" "$config_file"
-            #echo -e "${NC}Penggunaan Akun Bar-bar"
-            #tambahkan script bot telegram jika ada
-            telegram "Username : $admin_email Suspend.!%0ATotal IP Login : $ip_count %0A-------------------------------------%0ATerdeteksi MULTI LOGIN"
+		    #echo -e "${NC}Penggunaan Akun Bar-bar"
+            #bot telegram
+		    telegram "======> $domain <======%0AUser $admin_email Suspend.!!!%0AWaktu : $current_time%0ATotal IP Login : $ip_count%0AMax Login : 4 IP %0A=============================%0ATerdeteksi MULTI LOGIN"
+
         fi    
 
     fi
