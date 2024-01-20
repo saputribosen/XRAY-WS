@@ -102,6 +102,8 @@ wget -O certxray "${airassh3}/certxray.sh"
 wget -O wgetup "${airassh3}/wgetup.sh"
 wget -O xp "${airassh3}/xp.sh"
 wget -O akses "${airassh3}/akses.sh"
+wget -O akses "${airassh3}/delakses.sh"
+wget -O akses "${airassh3}/xpakses.sh"
 
 #Permissions
 chmod +x /usr/bin/updatedll
@@ -146,6 +148,8 @@ chmod +x chngedomain
 chmod +x chngeport
 chmod +x xp
 chmod +x akses
+chmod +x xpakses
+chmod +x delakses
 #update menu backup
 # chmod +x addemail
 # chmod +x autobackup
