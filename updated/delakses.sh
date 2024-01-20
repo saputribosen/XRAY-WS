@@ -9,6 +9,8 @@ CYAN='\033[0;36m'
 LIGHT='\033[0;37m'
 clear
 # Path to the log file
+current_time=$(date "+%Y-%m-%d %H:%M:%S")
+domain=$(cat /etc/xray/domain)
 log_file="/var/log/xray/access.log"
 config_file="/etc/xray/config.json"
 unique_admins=$(awk '/email:/{print $NF}' "$log_file" | sort -u)
