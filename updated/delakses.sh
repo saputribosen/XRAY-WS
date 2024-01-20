@@ -27,7 +27,7 @@ for admin_email in $unique_admins; do
         ip_count=$(grep -w "email: $admin_email" "$log_file" | grep "accepted" | grep -v "$excluded_domains" | awk '{split($3, a, ":"); if($3 ~ /tcp/) print a[2]; else print a[1]}' | sort -u | wc -l)
         
         # Tampilkan dan perbarui config.json jika jumlah IP lebih dari 5
-        if [ "$ip_count" -gt 4 ]; then
+        if [ "$ip_count" -gt 5 ]; then
             sed -i "/\"email\": \"$admin_email\"/ s/\(},\)/#},/" "$config_file"
 	    #echo -e "${NC}Penggunaan Akun Bar-bar"
             #bot telegram
