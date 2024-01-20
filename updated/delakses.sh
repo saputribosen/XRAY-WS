@@ -9,7 +9,7 @@ CYAN='\033[0;36m'
 LIGHT='\033[0;37m'
 clear
 # Path to the log file
-current_time=$(date "+%Y-%m-%d %H:%M:%S")
+current_time=$(date "+%d-%m-%Y %H:%M:%S")
 domain=$(cat /etc/xray/domain)
 log_file="/var/log/xray/access.log"
 config_file="/etc/xray/config.json"
