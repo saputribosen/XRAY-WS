@@ -31,6 +31,7 @@ for admin_email in $unique_admins; do
             sed -i "/\"email\": \"$admin_email\"/ s/\(},\)/#},/" "$config_file"
             #echo -e "${NC}Penggunaan Akun Bar-bar"
             #tambahkan script bot telegram jika ada
+            telegram "Username : $admin_email Suspend.!%0ATotal IP Login : $ip_count %0A-------------------------------------%0ATerdeteksi MULTI LOGIN"
         fi    
 
     fi
