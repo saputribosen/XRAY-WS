@@ -29,7 +29,7 @@ for admin_email in $unique_admins; do
         # Tampilkan dan perbarui config.json jika jumlah IP lebih dari 5
         if [ "$ip_count" -gt 5 ]; then
             sed -i "/\"email\": \"$admin_email\"/ s/\(},\)/#},/" "$config_file"
-            echo -e "${NC}Penggunaan Akun Bar-bar"
+            #echo -e "${NC}Penggunaan Akun Bar-bar"
             #tambahkan script bot telegram jika ada
         fi    
 
