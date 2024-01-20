@@ -29,9 +29,9 @@ for admin_email in $unique_admins; do
         # Tampilkan dan perbarui config.json jika jumlah IP lebih dari 5
         if [ "$ip_count" -gt 4 ]; then
             sed -i "/\"email\": \"$admin_email\"/ s/\(},\)/#},/" "$config_file"
-		    #echo -e "${NC}Penggunaan Akun Bar-bar"
+	    #echo -e "${NC}Penggunaan Akun Bar-bar"
             #bot telegram
-		    telegram "======> $domain <======%0AUser $admin_email Suspend.!!!%0AWaktu : $current_time%0ATotal IP Login : $ip_count%0AMax Login : 4 IP %0A=============================%0ATerdeteksi MULTI LOGIN"
+	    telegram "======> $domain <======%0AUser $admin_email Suspend.!!!%0AWaktu : $current_time%0ATotal IP Login : $ip_count%0AMax Login : 4 IP %0A=============================%0ATerdeteksi MULTI LOGIN"
 
         fi    
 
