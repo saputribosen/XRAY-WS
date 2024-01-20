@@ -12,6 +12,9 @@ CYAN='\033[0;36m'
 LIGHT='\033[0;37m'
 # ==========================================
 # Getting
+current_time=$(date "+%d-%m-%Y %H:%M:%S")
+domain=$(cat /etc/xray/domain)
+
 MYIP=$(wget -qO- ipinfo.io/ip);
 echo "Checking Username"
 IZIN=$( curl https://raw.githubusercontent.com/saputribosen/scriptfree/main/ipvps.txt | grep $MYIP )
@@ -43,4 +46,4 @@ sed -i '/^#&# /,/},{/ s/#},/},/' "/etc/xray/config.json"
 sleep 1
 systemctl restart xray
 clear
-telegram "Unsuspend Successfully..."
+telegram "$current_time Unsuspend All Account $domain Successfully"
