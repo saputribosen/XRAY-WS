@@ -152,7 +152,6 @@ chmod +x xp
 chmod +x akses
 chmod +x xpakses
 chmod +x delakses
-chmod +x telegram
 #update menu backup
 # chmod +x addemail
 # chmod +x autobackup
@@ -164,6 +163,10 @@ chmod +x telegram
 # chmod +x stopbackup
 # chmod +x testsend
 # chmod +x mbackup
+
+#telegram
+chown root:root /usr/bin/telegram
+chmod +x telegram
 
 
 clear
