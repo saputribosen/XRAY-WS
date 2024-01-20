@@ -42,4 +42,6 @@ done
 clear
 sleep 1
 truncate -s 0 "$log_file"
+truncate -s 0 "$auth_file"
+truncate -s 0 "$daemon_file"
 systemctl restart xray
