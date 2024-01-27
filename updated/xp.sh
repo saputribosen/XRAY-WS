@@ -46,8 +46,9 @@ grep "^### " "$config_file" | while read -r line; do
         if [[ "$expiration_date" == "$now" ]]; then
             # Remove the user configuration
             sed -i "/^### $user/,/},{/d" "$config_file"
-
-            telegram "User $user has been removed. (Vmess)"
+	    rm -f "/etc/xray/vmess-$user-tls.json" "/etc/xray/vmess-$user-nontls.json" "/etc/xray/vmess-$user-grpc.json"
+            rm -f "/usr/bin/vmess/vmess-$user.txt" "/usr/bin/vmess/vmess-$user-ntls.txt" "/usr/bin/vmess/vmess-$user-grpc.txt"
+            telegram "User $user has been removed. (Vmess WS/GRPC)"
         fi
     fi
 done
@@ -63,8 +64,8 @@ grep "^#&# " "$config_file" | while read -r line; do
         if [[ "$expiration_date" == "$now" ]]; then
             # Remove the user configuration
             sed -i "/^#&# $user/,/},{/d" "$config_file"
-
-            telegram "User $user has been removed. (Trojan)"
+  	    rm -f "/usr/bin/trojan/trojan-$user.txt" "/usr/bin/trojan/trojan-$user-grpc.txt"
+            telegram "User $user has been removed. (Trojan WS/GRPC)"
         fi
     fi
 done
@@ -80,8 +81,8 @@ grep "^#### " "$config_file" | while read -r line; do
         if [[ "$expiration_date" == "$now" ]]; then
             # Remove the user configuration
             sed -i "/^#### $user/,/},{/d" "$config_file"
-
-            telegram "User $user has been removed. (Vless)"
+ 	    rm -f /usr/bin/vless/vless-$user.txt
+            telegram "User $user has been removed. (Vless WS/GRPC)"
         fi
     fi
 done
