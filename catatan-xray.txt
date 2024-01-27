@@ -1,3 +1,5 @@
 bash -c "$(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release.sh)" @ install -u www-data --version 1.5.6
 
+bash -c "$(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release.sh)" @ install -u www-data --version 1.8.7
+
 bash <(curl -Ls https://raw.githubusercontent.com/ozipoetra/z-ui/main/install.sh)
