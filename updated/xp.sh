@@ -103,5 +103,5 @@ grep "^##&# " "$config_file" | while read -r line; do
     fi
 done
 sleep 1
-systemctl restart xray
 clear
+systemctl restart xray
