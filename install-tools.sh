@@ -137,6 +137,8 @@ apt-get --reinstall --fix-missing install -y bzip2 gzip coreutils wget screen rs
 echo "clear" >> .profile
 echo "neofetch" >> .profile
 
+
+
 # install webserver
 apt -y install nginx php php-fpm php-cli php-mysql libxml-parser-perl
 rm /etc/nginx/sites-enabled/default
@@ -152,6 +154,12 @@ chmod -R g+rw /home/vps/public_html
 cd /home/vps/public_html
 wget -O /home/vps/public_html/index.html "https://${airassh}/index.html1"
 /etc/init.d/nginx restart
+apt install software-properties-common -y 
+# Add repository and automatically confirm
+echo | add-apt-repository ppa:ondrej/php
+apt update -y
+apt-get install php7.4 php7.4-fpm php7.4-mysql libapache2-mod-php7.4 libapache2-mod-fcgid -y
+systemctl start php7.4-fpm
 cd
 cd
 chown -R www-data:www-data /home/vps/public_html
