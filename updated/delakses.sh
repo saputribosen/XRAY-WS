@@ -34,7 +34,7 @@ for admin_email in $unique_admins; do
 	    #echo -e "${NC}Penggunaan Akun Bar-bar"
             #bot telegram
 	    telegram "======> $domain <======%0AUser $admin_email Suspend.!!!%0AWaktu : $current_time%0ATotal IP Login : $ip_count%0AMax Login : 4 IP %0A=============================%0ATerdeteksi MULTI LOGIN"
-
+	    systemctl restart xray
         fi    
 
     fi
@@ -42,6 +42,4 @@ done
 clear
 sleep 1
 truncate -s 0 "$log_file"
-truncate -s 0 "$auth_file"
-truncate -s 0 "$daemon_file"
-systemctl restart xray
+
