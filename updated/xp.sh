@@ -114,7 +114,7 @@ grep "^##&# " "$config_file" | while read -r line; do
         if [[ "$expiration_seconds" -le "$now_seconds" ]]; then
             # Remove the user configuration
             sed -i "/^##&# $user/,/},{/d" "$config_file"
-
+	    rm -f /usr/bin/ss/ss-$user.txt
             telegram "User $user has been removed. (shadowsock)"
         fi
     fi
