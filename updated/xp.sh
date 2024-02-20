@@ -42,8 +42,12 @@ grep "^### " "$config_file" | while read -r line; do
         user=$(echo "$line" | awk '{print $2}')
         expiration_date=$(echo "$line" | awk '{print $3}')
 
-        # Check if the expiration date is today
-        if [[ "$expiration_date" == "$now" ]]; then
+        # Convert expiration date to seconds since epoch
+        expiration_seconds=$(date -d "$expiration_date" +%s)
+        now_seconds=$(date +%s)
+
+        # Check if the expiration date has passed
+        if [[ "$expiration_seconds" -le "$now_seconds" ]]; then
             # Remove the user configuration
             sed -i "/^### $user/,/},{/d" "$config_file"
 	    rm -f "/etc/xray/vmess-$user-tls.json" "/etc/xray/vmess-$user-nontls.json" "/etc/xray/vmess-$user-grpc.json"
@@ -60,8 +64,12 @@ grep "^#&# " "$config_file" | while read -r line; do
         user=$(echo "$line" | awk '{print $2}')
         expiration_date=$(echo "$line" | awk '{print $3}')
 
-        # Check if the expiration date is today
-        if [[ "$expiration_date" == "$now" ]]; then
+        # Convert expiration date to seconds since epoch
+        expiration_seconds=$(date -d "$expiration_date" +%s)
+        now_seconds=$(date +%s)
+
+        # Check if the expiration date has passed
+        if [[ "$expiration_seconds" -le "$now_seconds" ]]; then
             # Remove the user configuration
             sed -i "/^#&# $user/,/},{/d" "$config_file"
   	    rm -f "/usr/bin/trojan/trojan-$user.txt" "/usr/bin/trojan/trojan-$user-grpc.txt"
@@ -77,8 +85,12 @@ grep "^#### " "$config_file" | while read -r line; do
         user=$(echo "$line" | awk '{print $2}')
         expiration_date=$(echo "$line" | awk '{print $3}')
 
-        # Check if the expiration date is today
-        if [[ "$expiration_date" == "$now" ]]; then
+        # Convert expiration date to seconds since epoch
+        expiration_seconds=$(date -d "$expiration_date" +%s)
+        now_seconds=$(date +%s)
+
+        # Check if the expiration date has passed
+        if [[ "$expiration_seconds" -le "$now_seconds" ]]; then
             # Remove the user configuration
             sed -i "/^#### $user/,/},{/d" "$config_file"
  	    rm -f /usr/bin/vless/vless-$user.txt
@@ -94,8 +106,12 @@ grep "^##&# " "$config_file" | while read -r line; do
         user=$(echo "$line" | awk '{print $2}')
         expiration_date=$(echo "$line" | awk '{print $3}')
 
-        # Check if the expiration date is today
-        if [[ "$expiration_date" == "$now" ]]; then
+        # Convert expiration date to seconds since epoch
+        expiration_seconds=$(date -d "$expiration_date" +%s)
+        now_seconds=$(date +%s)
+
+        # Check if the expiration date has passed
+        if [[ "$expiration_seconds" -le "$now_seconds" ]]; then
             # Remove the user configuration
             sed -i "/^##&# $user/,/},{/d" "$config_file"
 
