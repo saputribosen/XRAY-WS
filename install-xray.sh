@@ -111,8 +111,9 @@ mkdir -p /home/vps/public_html
 echo "59 */4 * * * /usr/bin/restart-xray" >> /var/spool/cron/crontabs/root
 echo "59 23 * * * /usr/bin/xp" >> /var/spool/cron/crontabs/root
 echo "*/5 * * * * /usr/bin/delakses" >> /var/spool/cron/crontabs/root
-echo "0 0 * * * /usr/bin/xpakses" >> /var/spool/cron/crontabs/root
+#echo "0 0 * * * /usr/bin/xpakses" >> /var/spool/cron/crontabs/root
 #echo "57 23 * * * reboot" >> /etc/crontab
+echo "*/5 * * * * truncate -s 0 /var/log/xray/access.log" >> /var/spool/cron/crontabs/root
 systemctl restart cron
 
 # set uuid
