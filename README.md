@@ -45,8 +45,13 @@ sudo su
 
 2. Update Dulu VPS NYA
 
+Debian 10
 ```
 apt update -y && apt upgrade -y --fix-missing && update-grub && sleep 1 && reboot
+```
+Ubuntu 18
+```
+apt-get update && apt-get upgrade -y && apt dist-upgrade -y && update-grub && reboot
 ```
 - Otomatis Akan Reboot / Hidupkan Ulang
 
