@@ -30,7 +30,7 @@ is_root
 ip=$(wget -qO- ipinfo.io/ip)
 domainhost=$(cat /root/domain)
 region=$(wget -qO- ipinfo.io/region)
-isp=isp=$(curl -s https://geo.ipify.org/api/v2/country?apiKey=at_nvxWC3jIF8ytroWk7W8vc9DRrc6gk | grep -o '"isp": *"[^"]*"' | cut -d'"' -f4)
+isp=$(curl -s https://ipinfo.io/org | cut -d ' ' -f 2-);
 timezone=$(wget -qO- ipinfo.io/timezone)
 ossys=$(neofetch | grep "OS" | cut -d: -f2 | sed 's/ //g')
 host=$(neofetch | grep "Host" | cut -d: -f2 | sed 's/ //g')
