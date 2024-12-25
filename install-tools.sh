@@ -17,26 +17,17 @@ MYIP=$(wget -qO- ipinfo.io/ip);
 airassh="raw.githubusercontent.com/saputribosen/scriptfree/main/ssh"
 #
 cd
-# collor status
+# Collor Status
 error1="${RED} [ERROR] ${NC}"
 success="${GREEN} [OK] ${NC}"
+
 # Cek Domain
-source /var/lib/airavpn/ipvps.conf
-#if [[ "$IP" = "" ]]; then
-#    clear
-#    echo -e " ${error1}Gagal Install-tools.."
-#    sleep 2
-#    exit 0
-#else
-#    clear
-#    echo -e "${success}Installasi Tolls..."
-#    sleep 2
-#fi
+source /var/lib/airavpn/ipvps.conf || echo "Domain tidak ditemukan"
 
 # Edit file /etc/systemd/system/rc-local.service
 cat > /etc/systemd/system/rc-local.service <<-END
 [Unit]
-Description=/etc/rc.local
+Description=Run /etc/rc.local
 ConditionPathExists=/etc/rc.local
 [Service]
 Type=forking
@@ -49,7 +40,7 @@ SysVStartPriority=99
 WantedBy=multi-user.target
 END
 
-# nano /etc/rc.local
+# Buat file /etc/rc.local
 cat > /etc/rc.local <<-END
 #!/bin/sh -e
 # rc.local
@@ -73,95 +64,62 @@ END
 # Ubah izin akses
 chmod +x /etc/rc.local
 
-# enable rc local
+# Enable rc local
 systemctl enable rc-local
 systemctl start rc-local.service
-#
-sleep 1
-# set time GMT +7
+
+# Set timezone ke GMT+7
 ln -fs /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
 
-# set locale
-sed -i 's/AcceptEnv/#AcceptEnv/g' /etc/ssh/sshd_config
- 
-#alat
-apt install -y libnss3-dev libnspr4-dev pkg-config libpam0g-dev libcap-ng-dev libcap-ng-utils libselinux1-dev libcurl4-nss-dev flex bison make libnss3-tools libevent-dev xl2tpd pptpd
+# Disable AcceptEnv di SSH Config
+sed -i 's/^AcceptEnv/#AcceptEnv/g' /etc/ssh/sshd_config
+systemctl restart sshd
 
-sleep 1
-#update
+# Install dependensi yang diperlukan
 apt update -y
 apt upgrade -y
-apt dist-upgrade -y
-apt install sudo -y
-apt-get remove --purge ufw firewalld -y
-apt-get remove --purge exim4 -y
-# install wget and curl
-apt -y install wget curl
-apt -y install net-tools
-# Install Requirements Tools
-apt install ruby -y
-apt install python -y
-apt install make -y
-apt install cmake -y
-apt install coreutils -y
-apt install rsyslog -y
-apt install net-tools -y
-apt install zip -y
-apt install unzip -y
-apt install nano -y
-apt install sed -y
-apt install gnupg -y
-apt install gnupg1 -y
-apt install bc -y
-apt install jq -y
-apt install apt-transport-https -y
-apt install build-essential -y
-apt install dirmngr -y
-apt install libxml-parser-perl -y
-apt install neofetch -y
-apt install git -y
-apt install lsof -y
-apt install libsqlite3-dev -y
-apt install libz-dev -y
-apt install gcc -y
-apt install g++ -y
-apt install libreadline-dev -y
-apt install zlib1g-dev -y
-apt install libssl-dev -y
-apt install libssl1.0-dev -y
-apt install dos2unix -y
+apt install -y \
+  wget curl sudo nano net-tools \
+  gnupg software-properties-common unzip zip \
+  nginx php php-cli php-fpm php-mysql \
+  build-essential libssl-dev \
+  screen iptables neofetch git
 
-#
-# install
-apt-get --reinstall --fix-missing install -y bzip2 gzip coreutils wget screen rsyslog iftop htop net-tools zip unzip wget net-tools curl nano sed screen gnupg gnupg1 bc apt-transport-https build-essential dirmngr libxml-parser-perl neofetch git lsof
-echo "clear" >> .profile
-echo "neofetch" >> .profile
-
-
-
-# install webserver
-apt -y install nginx php php-fpm php-cli php-mysql libxml-parser-perl
+# Konfigurasi Nginx dan PHP
 rm /etc/nginx/sites-enabled/default
 rm /etc/nginx/sites-available/default
 curl https://${airassh}/nginx.conf > /etc/nginx/nginx.conf
 curl https://${airassh}/vps.conf > /etc/nginx/conf.d/vps.conf
-sed -i 's/listen = \/var\/run\/php-fpm.sock/listen = 127.0.0.1:9000/g' /etc/php/fpm/pool.d/www.conf
-useradd -m vps;
+sed -i 's/listen = \/run\/php\/php.*-fpm.sock/listen = 127.0.0.1:9000/g' /etc/php/7.4/fpm/pool.d/www.conf
+
+# Direktori web
+useradd -m vps
 mkdir -p /home/vps/public_html
-echo "<?php phpinfo() ?>" > /home/vps/public_html/info.php
+echo "<?php phpinfo(); ?>" > /home/vps/public_html/info.php
 chown -R www-data:www-data /home/vps/public_html
 chmod -R g+rw /home/vps/public_html
-cd /home/vps/public_html
-wget -O /home/vps/public_html/index.html "https://${airassh}/index.html1"
-/etc/init.d/nginx restart
-apt install software-properties-common -y 
-# Add repository and automatically confirm
-echo | add-apt-repository ppa:ondrej/php
+
+# Restart layanan
+systemctl restart nginx
+systemctl restart php7.4-fpm
+
+# Tambahkan repositori terbaru untuk PHP jika diperlukan
+add-apt-repository ppa:ondrej/php -y
 apt update -y
-apt-get install php7.4 php7.4-fpm php7.4-mysql libapache2-mod-php7.4 libapache2-mod-fcgid -y
-systemctl start php7.4-fpm
-cd
-cd
-chown -R www-data:www-data /home/vps/public_html
-/etc/init.d/nginx restart
-cd
+apt install -y php8.2 php8.2-fpm php8.2-mysql
+
+# Gunakan PHP terbaru
+update-alternatives --set php /usr/bin/php8.2
+
+# Restart semua layanan
+systemctl restart nginx
+systemctl restart php8.2-fpm
+
+# Bersihkan
+apt autoremove -y
+echo "clear" >> ~/.bashrc
+echo "neofetch" >> ~/.bashrc
+
+# Informasi Selesai
+clear
+echo -e "${success} Setup selesai! Periksa konfigurasi server Anda."
