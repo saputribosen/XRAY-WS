@@ -116,6 +116,7 @@ grep "^##&# " "$config_file" | while read -r line; do
             sed -i "/^##&# $user/,/},{/d" "$config_file"
 
             telegram "User $user has been removed. (shadowsock)"
+	    echo "Hapus User Expired Berhasil..."
         fi
     fi
 done
