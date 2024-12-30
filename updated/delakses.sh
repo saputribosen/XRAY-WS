@@ -35,6 +35,7 @@ for admin_email in $unique_admins; do
             #bot telegram
 	    telegram "======> $domain <======%0AUser $admin_email Suspend.!!!%0AWaktu : $current_time%0ATotal IP Login : $ip_count%0AMax Login : 4 IP %0A=============================%0ATerdeteksi MULTI LOGIN"
 	    systemctl restart xray
+    	    echo "Suspend user Multi Login Berhasil"
         fi    
 
     fi
