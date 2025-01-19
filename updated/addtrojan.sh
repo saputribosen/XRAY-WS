@@ -55,7 +55,6 @@ sed -i '/#trojanws$/a\#&# '"$user $exp"'\
 systemctl restart xray.service
 #buattrojan
 trojanlinkws="trojan://${uuid}@${domain}:443?path=/trojan&security=tls&host=${domain}&type=ws&sni=${domain}#${user}"
-service cron restart
 #tampil log.txt
 cd /usr/bin/trojan
 clear
@@ -80,6 +79,7 @@ echo -e "\033[0;32m     [*][*][*]======================================[*][*][*]
 echo ""
 read -p " ➣ Press Enter To Menu  " menu
 echo -e ""
+service cron restart
 
 case $menu in
   *)
