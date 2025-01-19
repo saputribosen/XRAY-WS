@@ -79,6 +79,8 @@ Trojan GRPC Account
 Domain   : ${domain}
 Username : ${user}
 Password : ${uuid}
+Exp	 : $exp
+Link	 : ${trojanlinkgrpc}
 
 Has been created.
 "
