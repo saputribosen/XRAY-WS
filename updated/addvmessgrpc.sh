@@ -71,9 +71,7 @@ EOF
 ## ubah config ke base64
 vmess_base643=$( base64 -w 0 <<< $vmess_json3 )
 xrayv2ray3="vmess://$(base64 -w 0 /etc/xray/vmess-$user-grpc.json)"
-systemctl restart xray.service
-systemctl restart xray
-service cron restart
+
 cd /usr/bin/vmess
 clear
 echo -e "======-VMESS-GRPC-======" | tee -a vmess-${user}-grpc.txt
@@ -94,6 +92,9 @@ echo -e "Link GRPC   : ${xrayv2ray3}" | tee -a vmess-${user}-grpc.txt
 echo -e "=========================" | tee -a vmess-${user}-grpc.txt
 echo -e "Terimakasih ${user}" | tee -a vmess-${user}-grpc.txt
 echo -e "" | tee -a vmess-${user}-grpc.txt
+systemctl restart xray.service
+systemctl restart xray
+service cron restart
 read -p " ➣ Press Enter To Menu  " menu
 echo -e ""
 
