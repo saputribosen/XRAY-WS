@@ -92,6 +92,18 @@ echo -e "Link GRPC   : ${xrayv2ray3}" | tee -a vmess-${user}-grpc.txt
 echo -e "=========================" | tee -a vmess-${user}-grpc.txt
 echo -e "Terimakasih ${user}" | tee -a vmess-${user}-grpc.txt
 echo -e "" | tee -a vmess-${user}-grpc.txt
+telegram "
+Vmess Account
+
+Domain   : ${domain}
+Username : ${user}
+UUID	 : ${uuid}
+Exp	 : $exp
+Link	 : ${xrayv2ray3}
+
+Has been created.
+"
+sleep 7
 systemctl restart xray.service
 systemctl restart xray
 service cron restart
