@@ -84,8 +84,6 @@ Password : ${uuid}
 Has been created.
 "
 sleep 7
-
-systemctl restart xray.service
 service cron restart
 read -p " ➣ Press Enter To Menu  " menu
 echo -e ""
