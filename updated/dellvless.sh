@@ -52,8 +52,6 @@ echo -e "[ ${GREEN}TUNGGU${NC} ] Akun $user sedang dihapuss... "
 sed -i "/^#### $user $exp/,/^},{/d" /etc/xray/config.json
 sed -i "/^#### $user $exp/,/^},{/d" /etc/xray/config.json
 rm -f /usr/bin/vless/vless-$user.txt
-systemctl restart xray.service
-service cron restart
 clear
 echo ""
 echo "==============================="
@@ -64,6 +62,15 @@ echo "Expired   : $exp"
 echo "==============================="
 echo "Scipt Mod By ARYO"
 echo " "
+telegram "
+Deleted Vless Account
+
+Username : $user
+Exp	 : $exp
+"
+sleep 6
+systemctl restart xray.service
+service cron restart
 read -p " ➣ Select [ 0 BACK Account | Enter To Menu ]:  " menu
 echo -e ""
 
