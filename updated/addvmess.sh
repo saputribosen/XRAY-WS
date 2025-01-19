@@ -95,9 +95,13 @@ echo -e "Terimakasih ${user}" | tee -a vmess-${user}.txt
 echo -e "" | tee -a vmess-${user}.txt
 telegram "
 Vmess Account
+
 Domain   : ${domain}
 Username : ${user}
 UUID	 : ${uuid}
+Exp	 : $exp
+Link	 : ${xrayv2ray1}
+
 Has been created.
 "
 sleep 6
