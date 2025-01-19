@@ -64,8 +64,13 @@ echo "Expired   : $exp"
 echo "==============================="
 echo "Script By ARYO"
 echo " "
-telegram "Username  : $user \n Expired   : $exp"
-sleep 6
+telegram "
+Deleted Vmess Account
+
+Username : $user
+Exp	 : $exp
+"
+sleep 7
 systemctl restart xray.service
 read -p " ➣ Select [ 0 BACK Account | Enter To Menu ]:  " menu
 echo -e ""
