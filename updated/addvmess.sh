@@ -93,7 +93,14 @@ echo -e "Link TLS    : ${xrayv2ray1}" | tee -a vmess-${user}.txt
 echo -e "=========================" | tee -a vmess-${user}.txt
 echo -e "Terimakasih ${user}" | tee -a vmess-${user}.txt
 echo -e "" | tee -a vmess-${user}.txt
-
+telegram "
+Vmess Account
+Domain   : ${domain}
+Username : ${user}
+UUID	 : ${uuid}
+Has been created.
+"
+sleep 6
 systemctl restart xray.service
 systemctl restart xray
 service cron restart
