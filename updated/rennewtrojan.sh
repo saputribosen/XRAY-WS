@@ -79,6 +79,12 @@ echo "Username  : $user"
 echo "Expired   : $exp4"
 echo "==============================="
 echo " "
+telegram "
+Renew Trojan Account!!
+
+Username  : $user
+Expired   : $exp4
+"
 sleep 5
 
 systemctl restart xray.service
