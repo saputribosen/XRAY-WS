@@ -51,7 +51,6 @@ sleep 2
 echo -e "[ ${GREEN}TUNGGU${NC} ] Akun $user sedang dihapuss... "
 sed -i "/^#&# $user $exp/,/^},{/d" /etc/xray/config.json
 rm -f "/usr/bin/trojan/trojan-$user.txt" "/usr/bin/trojan/trojan-$user-grpc.txt"
-systemctl restart xray.service
 clear
 echo " "
 echo "==============================="
@@ -62,6 +61,8 @@ echo "Expired   : $exp"
 echo "==============================="
 echo "Scipt By ARYO"
 echo " "
+sleep 5
+systemctl restart xray.service
 read -p " ➣ Select [ 0 BACK Account | Enter To Menu ]:  " menu
 echo -e ""
 
