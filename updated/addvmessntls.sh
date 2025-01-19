@@ -70,9 +70,6 @@ EOF
 ## ubah config ke base64
 vmess_base642=$( base64 -w 0 <<< $vmess_json2 )
 xrayv2ray2="vmess://$(base64 -w 0 /etc/xray/vmess-$user-nontls.json)"
-systemctl restart xray.service
-systemctl restart xray
-service cron restart
 cd /usr/bin/vmess
 clear
 echo -e "======-VMESS-WS-Ntls-======" | tee -a vmess-${user}-ntls.txt
@@ -93,6 +90,9 @@ echo -e "Link Non TLS    : ${xrayv2ray2}" | tee -a vmess-${user}-ntls.txt
 echo -e "=========================" | tee -a vmess-${user}-ntls.txt
 echo -e "Terimakasih ${user}" | tee -a vmess-${user}-ntls.txt
 echo -e "" | tee -a vmess-${user}-ntls.txt
+systemctl restart xray.service
+systemctl restart xray
+service cron restart
 read -p " ➣ Press Enter To Menu  " menu
 echo -e ""
 
