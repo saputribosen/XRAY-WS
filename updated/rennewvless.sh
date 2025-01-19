@@ -71,8 +71,6 @@ exp3=$(($exp2 + $masaaktif))
 exp4=`date -d "$exp3 days" +"%Y-%m-%d"`
 sed -i "/#### $user $exp/c\\#### $user $exp4" $lokasi
 sed -i "/Expired     : $exp/c\\Expired     : $exp4" $lok || sed -i "/Expired     : $exp/c\\Expired     : $exp4" $lokgrpc
-systemctl restart xray.service
-service cron restart
 clear
 echo ""
 echo "==============================="
@@ -82,6 +80,16 @@ echo "Username  : $user"
 echo "Expired   : $exp4"
 echo "==============================="
 echo " "
+telegram "
+Renew Trojan Account!!
+
+Username  : $user
+Expired   : $exp4
+"
+sleep 7
+
+systemctl restart xray.service
+service cron restart
 read -p " ➣ Select 0 BACK Renew | Enter To Menu :  " menu
 echo -e ""
 
