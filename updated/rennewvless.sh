@@ -81,7 +81,7 @@ echo "Expired   : $exp4"
 echo "==============================="
 echo " "
 telegram "
-Renew Trojan Account!!
+Renew Vless Account!!
 
 Username  : $user
 Expired   : $exp4
