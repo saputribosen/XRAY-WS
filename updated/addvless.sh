@@ -87,6 +87,7 @@ Vless Account
 Domain   : ${domain}
 Username : ${user}
 Password : ${uuid}
+Exp	 : $exp
 Link 	 : ${xrayvless3}
 
 Has been created.
