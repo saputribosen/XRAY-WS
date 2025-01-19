@@ -93,11 +93,12 @@ echo -e "Link TLS    : ${xrayv2ray1}" | tee -a vmess-${user}.txt
 echo -e "=========================" | tee -a vmess-${user}.txt
 echo -e "Terimakasih ${user}" | tee -a vmess-${user}.txt
 echo -e "" | tee -a vmess-${user}.txt
-read -p " ➣ Press Enter To Menu  " menu
-echo -e ""
+
 systemctl restart xray.service
 systemctl restart xray
 service cron restart
+read -p " ➣ Press Enter To Menu  " menu
+echo -e ""
 case $menu in
   *)
     clear
