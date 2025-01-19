@@ -52,7 +52,6 @@ exp=`date -d "$masaaktif days" +"%Y-%m-%d"`
 sed -i '/#trojanws$/a\#&# '"$user $exp"'\
 },{"password": "'""$uuid""'","email": "'""$user""'"' /etc/xray/config.json
 
-systemctl restart xray.service
 #buattrojan
 trojanlinkws="trojan://${uuid}@${domain}:443?path=/trojan&security=tls&host=${domain}&type=ws&sni=${domain}#${user}"
 #tampil log.txt
@@ -79,6 +78,7 @@ echo -e "\033[0;32m     [*][*][*]======================================[*][*][*]
 echo ""
 read -p " ➣ Press Enter To Menu  " menu
 echo -e ""
+systemctl restart xray.service
 service cron restart
 
 case $menu in
