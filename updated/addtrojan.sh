@@ -78,12 +78,15 @@ echo -e "\033[0;32m     [*][*][*]======================================[*][*][*]
 echo ""
 telegram "
 Trojan Account
+```
 Domain   : ${domain}
 Username : ${user}
 Password : ${uuid}
+```
 Has been created.
 "
 sleep 7
+systemctl restart xray
 service cron restart
 read -p " ➣ Press Enter To Menu  " menu
 echo -e ""
