@@ -81,6 +81,12 @@ echo "Username 	    : $user"
 echo "Expired New   : $exp4"
 echo "==============================="
 echo " "
+telegram "
+Renew Vmess Account!!
+
+Username  : $user
+Expired   : $exp4
+"
 sleep 5
 systemctl restart xray.service
 service cron restart
