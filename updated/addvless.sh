@@ -55,8 +55,7 @@ sed -i '/#vlessgrpc$/a\#### '"$user $exp"'\
 xrayvless1="vless://${uuid}@${domain}:$tls?path=/vless&security=tls&encryption=none&type=ws#${user}"
 xrayvless2="vless://${uuid}@${domain}:$nontls?path=/vless&encryption=none&type=ws#${user}"
 xrayvless3="vless://${uuid}@${domain}:$tls?mode=gun&security=tls&encryption=none&type=grpc&serviceName=vless-grpc&sni=${domain}#${user}"
-systemctl restart xray.service
-service cron restart
+
 cd /usr/bin/vless
 clear
 echo -e ""
@@ -82,6 +81,19 @@ echo -e "=========================" | tee -a vless-${user}.txt
 echo -e "Link GRPC   : ${xrayvless3}" | tee -a vless-${user}.txt
 echo -e "=========================" | tee -a vless-${user}.txt
 echo "Terimakasih ${user}" | tee -a vless-${user}.txt
+telegram "
+Vless Account
+
+Domain   : ${domain}
+Username : ${user}
+Password : ${uuid}
+Link 	 : ${xrayvless3}
+
+Has been created.
+"
+sleep 7
+systemctl restart xray.service
+service cron restart
 read -p " ➣ Press Enter To Menu  " menu
 echo -e ""
 
