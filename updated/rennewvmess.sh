@@ -72,8 +72,6 @@ exp3=$(($exp2 + $masaaktif))
 exp4=`date -d "$exp3 days" +"%Y-%m-%d"`
 sed -i "/### $user $exp/c\\### $user $exp4" $lokasi
 sed -i "/Expired     : $exp/c\\Expired     : $exp4" "$lok" || sed -i "/Expired     : $exp/c\\Expired     : $exp4" "$lokntls"
-systemctl restart xray.service
-service cron restart
 clear
 echo ""
 echo "==============================="
@@ -83,6 +81,9 @@ echo "Username 	    : $user"
 echo "Expired New   : $exp4"
 echo "==============================="
 echo " "
+sleep 5
+systemctl restart xray.service
+service cron restart
 read -p " ➣ Select 0 BACK Renew | Enter To Menu :  " menu
 echo -e ""
 
