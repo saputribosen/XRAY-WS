@@ -54,7 +54,6 @@ sed -i "/^### $user $exp/,/^},{/d" /etc/xray/config.json
 rm -f "/etc/xray/vmess-$user-tls.json" "/etc/xray/vmess-$user-nontls.json" "/etc/xray/vmess-$user-grpc.json"
 rm -f /home/vps/public_html/ss-ws-${user}.txt
 rm -f "/usr/bin/vmess/vmess-$user.txt" "/usr/bin/vmess/vmess-$user-ntls.txt" "/usr/bin/vmess/vmess-$user-grpc.txt"
-systemctl restart xray.service
 clear
 echo " "
 echo "==============================="
@@ -65,6 +64,8 @@ echo "Expired   : $exp"
 echo "==============================="
 echo "Scipt By ARYO"
 echo " "
+sleep 5
+systemctl restart xray.service
 read -p " ➣ Select [ 0 BACK Account | Enter To Menu ]:  " menu
 echo -e ""
 
