@@ -82,6 +82,8 @@ Trojan Account
 Domain   : ${domain}
 Username : ${user}
 Password : ${uuid}
+Exp	 : $exp
+Link	 : ${trojanlinkws}
 
 Has been created.
 "
