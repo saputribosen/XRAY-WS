@@ -72,9 +72,7 @@ EOF
 ## ubah config ke base64
 vmess_base641=$( base64 -w 0 <<< $vmess_json1 )
 xrayv2ray1="vmess://$(base64 -w 0 /etc/xray/vmess-$user-tls.json)"
-systemctl restart xray.service
-systemctl restart xray
-service cron restart
+
 cd /usr/bin/vmess
 clear
 echo -e "======-VMESS-WS-======" | tee -a vmess-${user}.txt
@@ -97,7 +95,9 @@ echo -e "Terimakasih ${user}" | tee -a vmess-${user}.txt
 echo -e "" | tee -a vmess-${user}.txt
 read -p " ➣ Press Enter To Menu  " menu
 echo -e ""
-
+systemctl restart xray.service
+systemctl restart xray
+service cron restart
 case $menu in
   *)
     clear
