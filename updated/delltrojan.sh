@@ -61,6 +61,12 @@ echo "Expired   : $exp"
 echo "==============================="
 echo "Scipt By ARYO"
 echo " "
+telegram "
+Deleted Trojan Account
+
+Username : ${user}
+Exp	 : $exp
+"
 sleep 5
 systemctl restart xray.service
 read -p " ➣ Select [ 0 BACK Account | Enter To Menu ]:  " menu
