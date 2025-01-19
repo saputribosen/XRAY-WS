@@ -52,10 +52,8 @@ exp=`date -d "$masaaktif days" +"%Y-%m-%d"`
 sed -i '/#trojangrpc$/a\#&# '"$user $exp"'\
 },{"password": "'""$uuid""'","email": "'""$user""'"' /etc/xray/config.json
 
-systemctl restart xray.service
 #buattrojangrpc
 trojanlinkgrpc="trojan://${uuid}@${domain}:443?mode=gun&security=tls&type=grpc&serviceName=aryo-grpc&sni=bug.com#${user}"
-service cron restart
 #tampil log.txt
 cd /usr/bin/trojan
 clear
@@ -75,6 +73,19 @@ echo -e "Link trojan gRPC  : ${trojanlinkgrpc}" | tee -a trojan-${user}.txt
 echo -e "==========================" | tee -a trojan-${user}-grpc.txt
 echo -e "Terimakasih ${user}" | tee -a trojan-${user}-grpc.txt
 echo -e "" | tee -a trojan-${user}-grpc.txt
+telegram "
+Trojan GRPC Account
+
+Domain   : ${domain}
+Username : ${user}
+Password : ${uuid}
+
+Has been created.
+"
+sleep 7
+systemctl restart xray.service
+service cron restart
+
 read -p " ➣ Press Enter To Menu  " menu
 echo -e ""
 
