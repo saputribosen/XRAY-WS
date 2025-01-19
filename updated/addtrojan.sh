@@ -78,11 +78,11 @@ echo -e "\033[0;32m     [*][*][*]======================================[*][*][*]
 echo ""
 telegram "
 Trojan Account
-```
+
 Domain   : ${domain}
 Username : ${user}
 Password : ${uuid}
-```
+
 Has been created.
 "
 sleep 7
