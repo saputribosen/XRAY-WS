@@ -62,10 +62,10 @@ echo "==============================="
 echo "Username  : $user"
 echo "Expired   : $exp"
 echo "==============================="
-echo "Scipt By ARYO"
+echo "Script By ARYO"
 echo " "
-telegram "Username  : $user\nExpired   : $exp"
-sleep 5
+telegram "Username  : $user \n Expired   : $exp"
+sleep 6
 systemctl restart xray.service
 read -p " ➣ Select [ 0 BACK Account | Enter To Menu ]:  " menu
 echo -e ""
