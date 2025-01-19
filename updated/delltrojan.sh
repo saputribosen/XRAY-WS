@@ -64,7 +64,7 @@ echo " "
 telegram "
 Deleted Trojan Account
 
-Username : ${user}
+Username : $user
 Exp	 : $exp
 "
 sleep 5
