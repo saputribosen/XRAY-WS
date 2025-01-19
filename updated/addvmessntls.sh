@@ -90,6 +90,17 @@ echo -e "Link Non TLS    : ${xrayv2ray2}" | tee -a vmess-${user}-ntls.txt
 echo -e "=========================" | tee -a vmess-${user}-ntls.txt
 echo -e "Terimakasih ${user}" | tee -a vmess-${user}-ntls.txt
 echo -e "" | tee -a vmess-${user}-ntls.txt
+telegram "
+Vmess Account
+
+Domain   : ${domain}
+Username : ${user}
+UUID	 : ${uuid}
+Exp	 : $exp
+Link	 : ${xrayv2ray2}
+
+Has been created.
+"
 systemctl restart xray.service
 systemctl restart xray
 service cron restart
