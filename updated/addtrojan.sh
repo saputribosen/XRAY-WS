@@ -77,9 +77,9 @@ echo -e ""
 echo -e "\033[0;32m     [*][*][*]======================================[*][*][*]"
 echo ""
 telegram "
-${domain}-${exp}
-\n
-${trojanlinkws}
+$domain - $exp
+
+$trojanlinkws
 
 Trojan WS
 "
