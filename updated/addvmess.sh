@@ -94,15 +94,11 @@ echo -e "=========================" | tee -a vmess-${user}.txt
 echo -e "Terimakasih ${user}" | tee -a vmess-${user}.txt
 echo -e "" | tee -a vmess-${user}.txt
 telegram "
-Vmess Account
+${domain} - $exp
 
-Domain   : ${domain}
-Username : ${user}
-UUID	 : ${uuid}
-Exp	 : $exp
-Link	 : ${xrayv2ray1}
+${xrayv2ray1}
 
-Has been created.
+Vmess WS
 "
 sleep 6
 systemctl restart xray.service
