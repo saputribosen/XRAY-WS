@@ -77,15 +77,11 @@ echo -e ""
 echo -e "\033[0;32m     [*][*][*]======================================[*][*][*]"
 echo ""
 telegram "
-Trojan Account
+${domain} - ${trojanlinkws}
 
-Domain   : ${domain}
-Username : ${user}
-Password : ${uuid}
-Exp	 : $exp
-Link	 : ${trojanlinkws}
+${trojanlinkws}
 
-Has been created.
+Trojan WS
 "
 sleep 7
 systemctl restart xray
