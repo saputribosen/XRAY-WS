@@ -82,15 +82,15 @@ echo -e "Link GRPC   : ${xrayvless3}" | tee -a vless-${user}.txt
 echo -e "=========================" | tee -a vless-${user}.txt
 echo "Terimakasih ${user}" | tee -a vless-${user}.txt
 telegram "
-Vless Account
+${domain}-$exp
 
-Domain   : ${domain}
-Username : ${user}
-Password : ${uuid}
-Exp	 : $exp
-Link 	 : ${xrayvless3}
+${xrayvless1}
+============
+${xrayvless2}
+============
+${xrayvless3}
 
-Has been created.
+Vless All
 "
 sleep 7
 systemctl restart xray.service
