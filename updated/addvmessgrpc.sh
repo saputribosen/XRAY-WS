@@ -93,15 +93,11 @@ echo -e "=========================" | tee -a vmess-${user}-grpc.txt
 echo -e "Terimakasih ${user}" | tee -a vmess-${user}-grpc.txt
 echo -e "" | tee -a vmess-${user}-grpc.txt
 telegram "
-Vmess Account
+${domain} - $exp
 
-Domain   : ${domain}
-Username : ${user}
-UUID	 : ${uuid}
-Exp	 : $exp
-Link	 : ${xrayv2ray3}
+${xrayv2ray3}
 
-Has been created.
+Vmess GRPC
 "
 sleep 7
 systemctl restart xray.service
