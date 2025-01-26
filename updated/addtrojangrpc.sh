@@ -74,16 +74,13 @@ echo -e "==========================" | tee -a trojan-${user}-grpc.txt
 echo -e "Terimakasih ${user}" | tee -a trojan-${user}-grpc.txt
 echo -e "" | tee -a trojan-${user}-grpc.txt
 telegram "
-Trojan GRPC Account
+${domain} - $expt
 
-Domain   : ${domain}
-Username : ${user}
-Password : ${uuid}
-Exp	 : $exp
-Link	 : ${trojanlinkgrpc}
+${trojanlinkgrpc}
 
-Has been created.
+Trojan GRPC
 "
+
 sleep 7
 systemctl restart xray.service
 service cron restart
