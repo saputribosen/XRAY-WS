@@ -21,4 +21,4 @@ if [ "$#" -ne 1 ]; then
 fi
 
 # Send the message 
-curl -s --data "text=$1" --data "chat_id=$GROUP_ID" 'https://api.telegram.org/bot'$BOT_TOKEN'/sendMessage' > /dev/null
+curl -s --data-urlencode "text=$1" --data-urlencode "chat_id=$GROUP_ID" 'https://api.telegram.org/bot'$BOT_TOKEN'/sendMessage' > /dev/null
