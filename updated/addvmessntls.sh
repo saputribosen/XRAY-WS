@@ -91,15 +91,11 @@ echo -e "=========================" | tee -a vmess-${user}-ntls.txt
 echo -e "Terimakasih ${user}" | tee -a vmess-${user}-ntls.txt
 echo -e "" | tee -a vmess-${user}-ntls.txt
 telegram "
-Vmess Account
+${domain} - $exp
 
-Domain   : ${domain}
-Username : ${user}
-UUID	 : ${uuid}
-Exp	 : $exp
-Link	 : ${xrayv2ray2}
+ ${xrayv2ray2}
 
-Has been created.
+Vmess Non TLS
 "
 systemctl restart xray.service
 systemctl restart xray
